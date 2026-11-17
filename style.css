@@ -44,12 +44,17 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:300;op
 @keyframes cup{to{transform:none}}
 /* быстрый плавный переход между страницами */
 @view-transition{navigation:auto}
-::view-transition-old(root){animation:vtOut .32s cubic-bezier(.4,0,1,1) both}
-::view-transition-new(root){animation:vtIn .45s cubic-bezier(.2,.8,.2,1) both}
-@keyframes vtOut{to{opacity:0;transform:translateY(-14px)}}
-@keyframes vtIn{from{opacity:0;transform:translateY(18px)}}
+/* сначала старая страница полностью уходит, потом появляется новая — тексты не накладываются */
+::view-transition-group(root){animation:none}
+::view-transition-image-pair(root){isolation:auto}
+::view-transition-old(root){animation:vtOut .2s cubic-bezier(.4,0,1,1) both;mix-blend-mode:normal}
+::view-transition-new(root){animation:vtIn .42s cubic-bezier(.2,.8,.2,1) .2s both;mix-blend-mode:normal}
+@keyframes vtOut{to{opacity:0;transform:translateY(-12px)}}
+@keyframes vtIn{from{opacity:0;transform:translateY(16px)}}
 .nav{view-transition-name:nav}
-::view-transition-old(nav),::view-transition-new(nav){animation:none}
+::view-transition-group(nav){animation:none}
+::view-transition-old(nav){display:none}
+::view-transition-new(nav){animation:none}
 /* запасной вариант для браузеров без view transitions */
 @supports not (view-transition-name:none){body.fade-in{animation:fadeIn .4s ease-out both}}
 @keyframes fadeIn{from{opacity:0}}
