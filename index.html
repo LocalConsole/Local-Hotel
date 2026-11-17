@@ -9,7 +9,7 @@
 <meta property="og:description" content="Панорамные апартаменты в Ташкенте. Можно с детьми и питомцем. Бронирование напрямую.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=1794908057">
 <script>document.documentElement.dataset.theme=(()=>{try{return localStorage.getItem('lh_theme')||'light'}catch(e){return'light'}})()</script>
 </head>
 <body data-page="home">
@@ -148,7 +148,7 @@
   </div>
 </section>
 
-<script src="app.js"></script>
+<script src="app.js?v=1794908057"></script>
 <script>
 
 /* фото */
@@ -159,11 +159,15 @@ img('#aboutImg',IMG.about); img('#famKids',IMG.kids); img('#famPet',IMG.dogs); i
 const st=$('#stars');
 for(let i=0;i<110;i++){const s=document.createElement('i');s.style.cssText=`left:${rnd(0,100)}%;top:${rnd(0,100)}%;animation-delay:${rnd(0,3)}s;transform:scale(${rnd(.5,1.4)})`;st.appendChild(s)}
 [[8,220,55],[18,160,75],[30,260,95]].forEach(([top,w,dur],i)=>$('#clouds').insertAdjacentHTML('beforeend',`<div class="cloud" style="top:${top}%;width:${w}px;animation-duration:${dur}s;animation-delay:-${i*22}s"></div>`));
-/* стая: каждая птица со своей скоростью, высотой и ритмом крыльев */
-[[18,0,34,1],[34,-1.2,34,.85],[4,-2,34,.8],[60,-16,42,1.1],[46,-17,42,.75]].forEach(([top,del,dur,sc],i)=>$('#birds').insertAdjacentHTML('beforeend',
- `<div class="bird" style="top:${top}px;animation-delay:${del}s;animation-duration:${dur}s"><div class="bob" style="animation-duration:${3+i*.7}s;animation-delay:-${i}s">
-  <svg viewBox="0 0 40 20" style="width:${32*sc}px;height:${16*sc}px;--fd:${(2.2+i*.35).toFixed(2)}s;--fdl:-${(i*.5).toFixed(1)}s">
-   <path class="wl" d="M20 11 Q13 4 2 7"/><path class="wr" d="M20 11 Q27 4 38 7"/><ellipse cx="20" cy="11.5" rx="3.2" ry="1.8"/></svg></div></div>`));
+/* стая: силуэты птиц с гнущимися крыльями (morph), у каждой свой ритм */
+const W={up:'M0 4 Q7 -1 13 7 L16 8 L19 7 Q25 -1 32 4 Q25 3 19 10 L16 11 L13 10 Q7 3 0 4 Z',mid:'M0 9 Q7 6 13 8 L16 8 L19 8 Q25 6 32 9 Q25 8 19 10 L16 11 L13 10 Q7 8 0 9 Z',dn:'M3 15 Q8 9 13 8 L16 8 L19 8 Q24 9 29 15 Q24 12 19 10 L16 11 L13 10 Q8 12 3 15 Z'};
+const flap=[W.mid,W.up,W.mid,W.dn,W.mid,W.up,W.mid,W.dn,W.mid,W.up,W.mid,W.mid,W.mid].join(';');
+const kt=[...Array(13)].map((_,i)=>(i/12).toFixed(3)).join(';');
+const ks=[...Array(12)].map(()=>'.45 0 .55 1').join(';');
+[[16,0,38,1],[34,-1.4,38,.82],[2,-2.3,38,.74],[58,-19,46,1.05],[44,-20.5,46,.7]].forEach(([top,del,dur,sc],i)=>$('#birds').insertAdjacentHTML('beforeend',
+ `<div class="bird" style="top:${top}px;animation-delay:${del}s;animation-duration:${dur}s"><div class="bob" style="animation-duration:${(3.2+i*.6).toFixed(1)}s;animation-delay:-${i}s">
+  <svg viewBox="-2 -3 36 20" style="width:${(34*sc).toFixed(0)}px;height:${(19*sc).toFixed(0)}px"><path d="${W.mid}">
+   <animate attributeName="d" dur="${(1.9+i*.23).toFixed(2)}s" begin="-${(i*.37).toFixed(2)}s" repeatCount="indefinite" values="${flap}" keyTimes="${kt}" calcMode="spline" keySplines="${ks}"/></path></svg></div></div>`));
 
 /* свечение и параллакс */
 const hero=$('#hero'),glow=$('#glow');
