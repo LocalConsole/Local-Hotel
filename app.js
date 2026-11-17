@@ -258,7 +258,9 @@ $('#themeBtn').onclick=e=>{
   const next=document.documentElement.dataset.theme==='dark'?'light':'dark';
   if(document.startViewTransition){
     const x=e.clientX,y=e.clientY,r=Math.hypot(Math.max(x,innerWidth-x),Math.max(y,innerHeight-y));
+    const nav=$('#nav');nav.style.viewTransitionName='none';
     const vt=document.startViewTransition(()=>setTheme(next));
+    vt.finished.finally(()=>nav.style.viewTransitionName='');
     vt.ready.then(()=>document.documentElement.animate({clipPath:[`circle(0 at ${x}px ${y}px)`,`circle(${r}px at ${x}px ${y}px)`]},{duration:800,easing:'cubic-bezier(.2,.8,.2,1)',pseudoElement:'::view-transition-new(root)'}));
   } else setTheme(next);
 };
@@ -266,20 +268,17 @@ $('#themeBtn').onclick=e=>{
 /* ---------- меню на телефоне ---------- */
 $('#burger').onclick=()=>$('#mnav').classList.toggle('open');
 
-/* ---------- переходы между страницами ---------- */
+/* ---------- заставка (только первый вход) и переходы ---------- */
 const curtain=$('#curtain');
-function openPage(){curtain.classList.add('out');document.body.classList.add('ready')}
-addEventListener('load',()=>setTimeout(openPage,350));
-setTimeout(openPage,2500);
-addEventListener('pageshow',e=>{if(e.persisted){curtain.className='curtain out'}});
-document.addEventListener('click',e=>{
-  const a=e.target.closest('a'); if(!a) return;
-  const h=a.getAttribute('href')||'';
-  if(!/\.html/.test(h)||a.target==='_blank'||e.metaKey||e.ctrlKey) return;
-  e.preventDefault();
-  curtain.className='curtain below'; void curtain.offsetWidth; curtain.className='curtain in';
-  setTimeout(()=>location.href=h,650);
-});
+let firstVisit=true;try{firstVisit=!sessionStorage.getItem('lh_seen');sessionStorage.setItem('lh_seen','1')}catch(e){}
+if(firstVisit){
+  // красивая заставка LOCAL — один раз за сессию, не ждём загрузки фото
+  setTimeout(()=>{curtain.classList.add('out');document.body.classList.add('ready')},1100);
+}else{
+  curtain.remove();document.body.classList.add('ready','fade-in');
+}
+addEventListener('pageshow',e=>{if(e.persisted&&curtain.isConnected)curtain.classList.add('out')});
+// между страницами браузер сам делает плавный переход (@view-transition в CSS) — без задержек
 
 /* ---------- магнитные кнопки ---------- */
 function magnetic(){

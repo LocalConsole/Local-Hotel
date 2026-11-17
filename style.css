@@ -42,6 +42,17 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:300;op
 .curtain.in{transform:translateY(0);transition:transform .7s var(--ease)}
 .curtain.below{transform:translateY(100%);transition:none}
 @keyframes cup{to{transform:none}}
+/* быстрый плавный переход между страницами */
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:vtOut .32s cubic-bezier(.4,0,1,1) both}
+::view-transition-new(root){animation:vtIn .45s cubic-bezier(.2,.8,.2,1) both}
+@keyframes vtOut{to{opacity:0;transform:translateY(-14px)}}
+@keyframes vtIn{from{opacity:0;transform:translateY(18px)}}
+.nav{view-transition-name:nav}
+::view-transition-old(nav),::view-transition-new(nav){animation:none}
+/* запасной вариант для браузеров без view transitions */
+@supports not (view-transition-name:none){body.fade-in{animation:fadeIn .4s ease-out both}}
+@keyframes fadeIn{from{opacity:0}}
 
 /* ---------- прогресс скролла ---------- */
 .progress{position:fixed;top:0;left:0;height:2px;width:100%;background:linear-gradient(90deg,var(--gold),var(--acc));transform-origin:0 50%;transform:scaleX(0);z-index:60}
