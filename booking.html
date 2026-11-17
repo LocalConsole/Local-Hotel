@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Бронирование — Local Hotel, Ташкент</title>
+<meta name="description" content="Забронируйте номер в Local Hotel напрямую: без комиссии и предоплаты. Можно с детьми и с питомцем.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.dataset.theme=(()=>{try{return localStorage.getItem('lh_theme')||'light'}catch(e){return'light'}})()</script>
+</head>
+<body data-page="booking">
+
+<header class="page-head" style="padding-bottom:70px">
+  <div class="wrap">
+    <div class="crumbs reveal"><a href="index.html" data-i18n="nav_home"></a> / <span data-i18n="nav_book"></span></div>
+    <h1 class="h1 split" data-i18n="bp_h"></h1>
+    <p class="lead reveal d2" data-i18n="bp_p"></p>
+  </div>
+  <div class="mini-city city-auto"><svg data-city="140" viewBox="0 0 1600 140" preserveAspectRatio="xMidYMax slice"></svg></div>
+</header>
+
+<section class="sec" style="padding-top:50px">
+  <div class="wrap booking">
+    <div>
+      <div class="panel reveal"><h3><b>1</b><span data-i18n="st_dates"></span></h3>
+        <div class="row2">
+          <div class="inp"><label data-i18n="f_in"></label><input type="date" id="dIn"></div>
+          <div class="inp"><label data-i18n="f_out"></label><input type="date" id="dOut"></div>
+        </div>
+      </div>
+
+      <div class="panel reveal"><h3><b>2</b><span data-i18n="st_guests"></span></h3>
+        <div class="stepper"><div class="lbl"><b data-i18n="adults"></b><small data-i18n="adults_s"></small></div>
+          <div class="ctl"><button type="button" data-s="adults" data-d="-1">−</button><output id="oAdults">2</output><button type="button" data-s="adults" data-d="1">+</button></div></div>
+        <div class="stepper"><div class="lbl"><b data-i18n="kids"></b><small data-i18n="kids_s"></small></div>
+          <div class="ctl"><button type="button" data-s="kids" data-d="-1">−</button><output id="oKids">0</output><button type="button" data-s="kids" data-d="1">+</button></div></div>
+        <div class="guests-anim" id="gAnim"></div>
+      </div>
+
+      <div class="panel reveal"><h3><b>3</b><span data-i18n="st_pet"></span></h3>
+        <label class="switch"><div class="lbl"><b data-i18n="pet_q"></b><small data-i18n="pet_s"></small></div><input type="checkbox" id="petOn"><span class="tg"></span></label>
+        <div class="pet-opts" id="petOpts"><div>
+          <div class="pet-types">
+            <input type="radio" name="pt" id="ptCat" value="cat" checked><label for="ptCat"><span>🐱</span><i data-i18n="cat" style="font-style:normal"></i></label>
+            <input type="radio" name="pt" id="ptDog" value="dog"><label for="ptDog"><span>🐶</span><i data-i18n="dog" style="font-style:normal"></i></label>
+            <input type="radio" name="pt" id="ptOth" value="other"><label for="ptOth"><span>🐰</span><i data-i18n="other" style="font-style:normal"></i></label>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="panel reveal"><h3><b>4</b><span data-i18n="st_room"></span></h3>
+        <div class="pick-rooms" id="picks"></div>
+      </div>
+
+      <div class="panel reveal"><h3><b>5</b><span data-i18n="st_extra"></span></h3>
+        <label class="switch"><div class="lbl"><b data-i18n="ex_bf"></b><small data-i18n="ex_bf_s"></small></div><input type="checkbox" id="exBf"><span class="tg"></span></label>
+        <label class="switch"><div class="lbl"><b data-i18n="ex_tr"></b><small data-i18n="ex_tr_s"></small></div><input type="checkbox" id="exTr"><span class="tg"></span></label>
+        <label class="switch"><div class="lbl"><b data-i18n="ex_crib"></b><small data-i18n="free"></small></div><input type="checkbox" id="exCrib"><span class="tg"></span></label>
+      </div>
+
+      <div class="panel reveal"><h3><b>6</b><span data-i18n="st_contact"></span></h3>
+        <div class="row2">
+          <div class="inp"><label data-i18n="name"></label><input id="cName" autocomplete="name"></div>
+          <div class="inp"><label data-i18n="phone"></label><input id="cPhone" value="+998 " autocomplete="tel"></div>
+        </div>
+        <div class="inp"><label data-i18n="comment"></label><textarea id="cNote" rows="3" data-i18n-ph="comment_ph"></textarea></div>
+      </div>
+    </div>
+
+    <aside class="panel summary reveal d1">
+      <div class="ph" id="sImg"></div>
+      <div class="kicker" data-i18n="your"></div>
+      <h4 id="sName"></h4>
+      <div class="sum" id="sum"></div>
+      <div class="total"><span data-i18n="total"></span><b id="sTotal">0</b></div>
+      <button class="btn btn-gold" id="send"><span data-i18n="send"></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <p class="hint" data-i18n="hint"></p>
+    </aside>
+  </div>
+</section>
+
+<script src="app.js"></script>
+<script>
+const P=new URLSearchParams(location.search);
+const S={adults:+P.get('adults')||2,kids:P.get('kids')?1:0,pet:!!P.get('pet'),room:P.get('room')||'loft'};
+if(S.adults>6)S.adults=6;
+const iso=d=>d.toISOString().slice(0,10);
+$('#dIn').min=iso(new Date());
+$('#dIn').value=P.get('in')||iso(new Date(Date.now()+864e5));
+$('#dOut').value=P.get('out')||iso(new Date(Date.now()+3*864e5));
+$('#petOn').checked=S.pet;
+
+const fits=r=>S.adults+S.kids<=r.max&&(!S.pet||r.pets)&&(!S.kids||r.kids);
+const nights=()=>Math.max(0,Math.round((new Date($('#dOut').value)-new Date($('#dIn').value))/864e5));
+
+function picks(){
+  $('#picks').innerHTML=ROOMS.map(r=>`<div class="pick ${r.id===S.room?'on':''} ${fits(r)?'':'off'}" data-id="${r.id}">
+    <div class="ph"><img src="${r.img}" alt="" loading="lazy" onerror="this.remove()"></div>
+    <div class="t"><b>${t('r_'+r.id)}</b><small>${fits(r)?fmt(r.price)+' '+t('per'):t('no_fit')}</small></div></div>`).join('');
+  $$('.pick').forEach(p=>p.onclick=()=>{S.room=p.dataset.id;update()});
+}
+let shown=0;
+function tween(to){
+  const from=shown,t0=performance.now();shown=to;
+  (function f(n){const p=Math.min((n-t0)/600,1);$('#sTotal').textContent=fmt(from+(to-from)*(1-Math.pow(1-p,3)))+' '+t('per');if(p<1)requestAnimationFrame(f)})(t0);
+}
+function update(){
+  if(!fits(ROOMS.find(r=>r.id===S.room))){const f=ROOMS.find(fits);if(f)S.room=f.id}
+  S.pet=$('#petOn').checked;
+  $('#petOpts').classList.toggle('open',S.pet);
+  $('#oAdults').textContent=S.adults;$('#oKids').textContent=S.kids;
+  const pt=($('input[name=pt]:checked')||{}).value||'cat';
+  $('#gAnim').innerHTML=[...Array(S.adults)].map(()=>'<span>🧑</span>').join('')+[...Array(S.kids)].map(()=>'<span>🧒</span>').join('')+(S.pet?`<span>${{cat:'🐱',dog:'🐶',other:'🐰'}[pt]}</span>`:'');
+  picks();
+  const r=ROOMS.find(x=>x.id===S.room),n=nights();
+  const old=$('#sImg img');
+  if(!old||old.dataset.id!==r.id){$('#sImg').innerHTML=`<img src="${r.img}" data-id="${r.id}" alt="" style="animation:pop .6s cubic-bezier(.2,.8,.2,1)" onerror="this.remove()">`}
+  $('#sName').textContent=t('r_'+r.id);
+  const df=s=>new Date(s).toLocaleDateString(L==='en'?'en-GB':L==='uz'?'uz-UZ':'ru-RU',{day:'numeric',month:'short'});
+  const bf=$('#exBf').checked?EXTRA.breakfast*(S.adults+S.kids)*n:0, pet=S.pet?EXTRA.pet*n:0, tr=$('#exTr').checked?EXTRA.transfer:0, room=r.price*n;
+  const rows=[[t('f_in')+' → '+t('f_out'),`${df($('#dIn').value)} → ${df($('#dOut').value)}`],[t('nights'),n],[t('n_guests'),`${S.adults+S.kids}${S.kids?` (👶 ${S.kids})`:''}`],[t('n_room'),fmt(room)+' '+t('per')]];
+  if(bf)rows.push([t('n_bf'),fmt(bf)+' '+t('per')]);
+  if(pet)rows.push([t('n_pet')+' · '+t('pet_word')[pt],fmt(pet)+' '+t('per')]);
+  if(tr)rows.push([t('n_tr'),fmt(tr)+' '+t('per')]);
+  if($('#exCrib').checked)rows.push([t('ex_crib'),t('free')]);
+  $('#sum').innerHTML=rows.map(([a,b])=>`<div><span>${a}</span><b>${b}</b></div>`).join('');
+  S.total=room+bf+pet+tr;S.n=n;S.pt=pt;
+  tween(S.total);
+}
+$$('.stepper button').forEach(b=>b.onclick=()=>{
+  const k=b.dataset.s,lim=k==='adults'?[1,6]:[0,4];
+  S[k]=Math.min(lim[1],Math.max(lim[0],S[k]+(+b.dataset.d)));
+  update();
+});
+['#dIn','#dOut','#petOn','#exBf','#exTr','#exCrib'].forEach(s=>$(s).addEventListener('change',update));
+$$('input[name=pt]').forEach(r=>r.addEventListener('change',update));
+$('#dIn').addEventListener('change',()=>{if($('#dOut').value<=$('#dIn').value){const d=new Date($('#dIn').value);d.setDate(d.getDate()+1);$('#dOut').value=iso(d);update()}});
+
+$('#send').onclick=()=>{
+  if(S.n<1){LH.toast(t('err_dates'));return}
+  if(!$('#cName').value.trim()||$('#cPhone').value.replace(/\D/g,'').length<9){LH.toast(t('err_name'));return}
+  const r=ROOMS.find(x=>x.id===S.room);
+  const lines=[t('msg'),'',`${t('f_room')}: ${t('r_'+r.id)}`,`${t('f_in')}: ${$('#dIn').value}`,`${t('f_out')}: ${$('#dOut').value} (${S.n} ${t('nights').toLowerCase()})`,
+    `${t('adults')}: ${S.adults}`,`${t('kids')}: ${S.kids}`];
+  if(S.pet)lines.push(`${t('n_pet')}: ${t('pet_word')[S.pt]}`);
+  if($('#exBf').checked)lines.push(`${t('ex_bf')}: ✓`);
+  if($('#exTr').checked)lines.push(`${t('ex_tr')}: ✓`);
+  if($('#exCrib').checked)lines.push(`${t('ex_crib')}: ✓`);
+  lines.push(`${t('total')}: ${fmt(S.total)} ${t('per')}`,'',`${t('name')}: ${$('#cName').value}`,`${t('phone')}: ${$('#cPhone').value}`);
+  if($('#cNote').value.trim())lines.push(`${t('comment')}: ${$('#cNote').value}`);
+  try{navigator.clipboard.writeText(lines.join('\n'))}catch(e){}
+  LH.confetti();LH.toast(t('ok'));
+  setTimeout(()=>window.open('https://t.me/'+PHONE,'_blank'),1400);
+};
+document.addEventListener('lang',update);
+LH.init();
+</script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Об отеле — Local Hotel, Ташкент</title>
+<meta name="description" content="Local Hotel — небольшой отель с панорамным видом на Ташкент. История, галерея, отзывы и ответы на частые вопросы.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.dataset.theme=(()=>{try{return localStorage.getItem('lh_theme')||'light'}catch(e){return'light'}})()</script>
+</head>
+<body data-page="about">
+
+<header class="page-head">
+  <div class="wrap">
+    <div class="crumbs reveal"><a href="index.html" data-i18n="nav_home"></a> / <span data-i18n="nav_about"></span></div>
+    <h1 class="h1 split" data-i18n="ap_h"></h1>
+    <p class="lead reveal d2" data-i18n="ap_p"></p>
+  </div>
+  <div class="mini-city city-auto"><svg data-city="140" viewBox="0 0 1600 140" preserveAspectRatio="xMidYMax slice"></svg></div>
+</header>
+
+<section class="sec" style="padding-top:70px">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="ph arch reveal" id="storyImg"><div class="badge" data-i18n="badge"></div></div>
+      <div>
+        <div class="kicker reveal" data-i18n="story_k"></div>
+        <h2 class="h2 split" data-i18n="story_h"></h2>
+        <p class="lead reveal d1" style="margin-top:26px" data-i18n="story_p1"></p>
+        <p class="lead reveal d2" style="margin-top:16px" data-i18n="story_p2"></p>
+        <div class="num-list reveal d3">
+          <div><em>01</em><p data-i18n="a1"></p></div>
+          <div><em>02</em><p data-i18n="a2"></p></div>
+          <div><em>03</em><p data-i18n="a3"></p></div>
+          <div><em>04</em><p data-i18n="a4"></p></div>
+        </div>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat reveal"><b data-count="5.0">0</b><span data-i18n="s1"></span></div>
+      <div class="stat reveal d1"><b data-count="79">0</b><span data-i18n="s2"></span></div>
+      <div class="stat reveal d2"><b>24/7</b><span data-i18n="s3"></span></div>
+      <div class="stat reveal d3"><b>0%</b><span data-i18n="s4"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:20px">
+  <div class="wrap">
+    <div class="kicker reveal" data-i18n="gal_k"></div>
+    <h2 class="h2 split" data-i18n="gal_h"></h2>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:20px">
+  <div class="wrap">
+    <div class="kicker reveal" data-i18n="rev_k"></div>
+    <h2 class="h2 split" data-i18n="rev_h"></h2>
+    <div class="reviews">
+      <div class="rev big reveal"><div><div class="stars5">★★★★★</div><q data-i18n="r1"></q></div>
+        <div class="who"><div class="av">У</div><div>Улугбек С.<br><span data-i18n="ya"></span></div></div></div>
+      <div class="rev reveal d1"><div class="stars5">★★★★★</div><q data-i18n="r2"></q>
+        <div class="who"><div class="av">У</div><div>Улугбек С.<br><span data-i18n="ya"></span></div></div></div>
+      <div class="rev reveal d2"><div class="stars5">★★★★★</div><q data-i18n="r3"></q>
+        <div class="who"><div class="av">★</div><div><span data-i18n="guest_n"></span><br><span data-i18n="ya"></span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:20px">
+  <div class="wrap" style="max-width:1000px">
+    <div class="kicker reveal" data-i18n="faq_k"></div>
+    <h2 class="h2 split" data-i18n="faq_h"></h2>
+    <div class="faq reveal d1">
+      <div class="qa"><button><span data-i18n="q1"></span><i>+</i></button><div class="ans"><div><p data-i18n="aq1"></p></div></div></div>
+      <div class="qa"><button><span data-i18n="q2"></span><i>+</i></button><div class="ans"><div><p data-i18n="aq2"></p></div></div></div>
+      <div class="qa"><button><span data-i18n="q3"></span><i>+</i></button><div class="ans"><div><p data-i18n="aq3"></p></div></div></div>
+      <div class="qa"><button><span data-i18n="q4"></span><i>+</i></button><div class="ans"><div><p data-i18n="aq4"></p></div></div></div>
+      <div class="qa"><button><span data-i18n="q5"></span><i>+</i></button><div class="ans"><div><p data-i18n="aq5"></p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="kicker reveal" style="justify-content:center" data-i18n="cta_k"></div>
+    <h2 class="h2 split" data-i18n="cta_h"></h2>
+    <div class="btns reveal d2"><a href="booking.html" class="btn btn-gold"><span data-i18n="book"></span></a></div>
+  </div>
+</section>
+
+<script src="app.js"></script>
+<script>
+$('#storyImg').insertAdjacentHTML('afterbegin',`<img src="${IMG.r1}" alt="" loading="lazy" onerror="this.remove()">`);
+const pics=[ROOMS[1].img,IMG.about,ROOMS[0].img,ROOMS[2].img,ROOMS[3].img,IMG.cat];
+$('#gallery').innerHTML=pics.map((p,i)=>`<div class="ph reveal d${i%4}"><img src="${p}" alt="" loading="lazy" onerror="this.remove()"></div>`).join('');
+LH.faq(); LH.lightbox(); LH.init();
+</script>
+</body>
+</html>

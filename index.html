@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Local Hotel — Ташкент, Себзор · панорамные апартаменты</title>
+<meta name="description" content="Local Hotel в Ташкенте: двухуровневые апартаменты с панорамным видом, рядом Tashkent City. Можно с детьми и с питомцем. Рейтинг 5.0.">
+<meta property="og:title" content="Local Hotel — город под вашим окном">
+<meta property="og:description" content="Панорамные апартаменты в Ташкенте. Можно с детьми и питомцем. Бронирование напрямую.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.dataset.theme=(()=>{try{return localStorage.getItem('lh_theme')||'light'}catch(e){return'light'}})()</script>
+</head>
+<body data-page="home">
+
+<!-- ГЛАВНЫЙ ЭКРАН -->
+<section class="hero" id="hero">
+  <div class="hero-glow" id="glow"></div>
+  <div class="stars" id="stars"></div>
+  <div class="shoot" style="top:12%;right:22%"></div>
+  <div class="shoot" style="top:22%;right:48%;animation-delay:3.5s"></div>
+  <div id="clouds"></div>
+  <div class="birds" id="birds"></div>
+  <div class="orb" id="orb"></div>
+  <div class="hero-sky city-auto" id="heroSky"><svg data-city="420" viewBox="0 0 1600 420" preserveAspectRatio="xMidYMax slice"></svg></div>
+
+  <div class="hero-inner">
+    <div class="eyebrow" data-i18n="eyebrow"></div>
+    <h1 class="h1 split" data-i18n="h1"></h1>
+    <p class="hero-sub reveal d2" data-i18n="hero_sub"></p>
+  </div>
+
+  <div class="rating-chip">
+    <b>5.0</b>
+    <div><div class="stars5">★★★★★</div><small data-i18n="chip"></small></div>
+  </div>
+
+  <form class="book-bar" id="quick" autocomplete="off">
+    <div class="field"><label data-i18n="f_in"></label><input type="date" id="qIn" required></div>
+    <div class="field"><label data-i18n="f_out"></label><input type="date" id="qOut" required></div>
+    <div class="field"><label data-i18n="f_guests"></label>
+      <select id="qG"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option></select></div>
+    <div class="field"><label data-i18n="f_room"></label><select id="qRoom"></select></div>
+    <button class="btn btn-gold" type="submit"><span data-i18n="check"></span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </form>
+</section>
+
+<!-- БЕГУЩАЯ СТРОКА + КОТ -->
+<div class="marquee" id="marquee"><div class="marquee-track" id="mq"></div></div>
+
+<!-- ОБ ОТЕЛЕ -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <div class="kicker reveal" data-i18n="about_k"></div>
+        <h2 class="h2 split" data-i18n="about_h"></h2>
+        <p class="lead reveal d1" style="margin-top:28px" data-i18n="about_p"></p>
+        <div class="num-list reveal d2">
+          <div><em>01</em><p data-i18n="a1"></p></div>
+          <div><em>02</em><p data-i18n="a2"></p></div>
+          <div><em>03</em><p data-i18n="a3"></p></div>
+          <div><em>04</em><p data-i18n="a4"></p></div>
+        </div>
+        <a href="about.html" class="btn btn-ghost reveal d3" style="margin-top:34px"><span data-i18n="more"></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="ph arch reveal" id="aboutImg"><div class="badge" data-i18n="badge"></div></div>
+    </div>
+    <div class="stats">
+      <div class="stat reveal"><b data-count="5.0">0</b><span data-i18n="s1"></span></div>
+      <div class="stat reveal d1"><b data-count="79">0</b><span data-i18n="s2"></span></div>
+      <div class="stat reveal d2"><b>24/7</b><span data-i18n="s3"></span></div>
+      <div class="stat reveal d3"><b>0%</b><span data-i18n="s4"></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- НОМЕРА -->
+<section class="sec" style="padding-top:30px">
+  <div class="wrap">
+    <div class="rooms-head">
+      <div><div class="kicker reveal" data-i18n="rooms_k"></div><h2 class="h2 split" data-i18n="rooms_h"></h2></div>
+      <div class="reveal d1"><p class="lead" data-i18n="rooms_p"></p>
+        <a href="rooms.html" class="btn btn-ghost" style="margin-top:22px"><span data-i18n="all_rooms"></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    </div>
+    <div class="rooms" id="roomsGrid"></div>
+  </div>
+</section>
+
+<!-- ДЛЯ ВСЕЙ СЕМЬИ -->
+<section class="sec" style="padding-top:30px">
+  <div class="wrap">
+    <div class="kicker reveal" data-i18n="fam_k"></div>
+    <h2 class="h2 split" data-i18n="fam_h"></h2>
+    <p class="lead reveal d1" style="margin-top:24px" data-i18n="fam_p"></p>
+    <div class="family">
+      <a href="booking.html?kids=1" class="fam reveal" data-tilt><div class="ph" id="famKids"></div>
+        <div><span class="emo">👶</span><h3 data-i18n="fam1_h"></h3><p data-i18n="fam1_p"></p></div></a>
+      <a href="booking.html?pet=1" class="fam reveal d1" data-tilt><div class="ph" id="famPet"></div><div class="paws" id="paws"></div>
+        <div><span class="emo">🐾</span><h3 data-i18n="fam2_h"></h3><p data-i18n="fam2_p"></p></div></a>
+      <a href="booking.html?room=pano" class="fam reveal d2" data-tilt><div class="ph" id="famTwo"></div>
+        <div><span class="emo">🥂</span><h3 data-i18n="fam3_h"></h3><p data-i18n="fam3_p"></p></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ПАНОРАМА -->
+<section class="pano day" id="view">
+  <div class="sun"></div>
+  <div class="pano-svg"><svg id="panoSky" viewBox="0 0 1600 520" preserveAspectRatio="xMidYMax slice"></svg></div>
+  <div class="pano-copy">
+    <div class="kicker reveal" data-i18n="view_k"></div>
+    <h2 class="h2 split" data-i18n="view_h"></h2>
+    <div class="toggle reveal d2" id="dn"><span data-m="day" data-i18n="day"></span><span data-m="night" data-i18n="night"></span></div>
+  </div>
+</section>
+
+<!-- ОТЗЫВЫ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="kicker reveal" data-i18n="rev_k"></div>
+    <h2 class="h2 split" data-i18n="rev_h"></h2>
+    <div class="reviews">
+      <div class="rev big reveal"><div><div class="stars5">★★★★★</div><q data-i18n="r1"></q></div>
+        <div class="who"><div class="av">У</div><div>Улугбек С.<br><span data-i18n="ya"></span></div></div></div>
+      <div class="rev reveal d1"><div class="stars5">★★★★★</div><q data-i18n="r2"></q>
+        <div class="who"><div class="av">У</div><div>Улугбек С.<br><span data-i18n="ya"></span></div></div></div>
+      <div class="rev reveal d2"><div class="stars5">★★★★★</div><q data-i18n="r3"></q>
+        <div class="who"><div class="av">★</div><div><span data-i18n="guest_n"></span><br><span data-i18n="ya"></span></div></div></div>
+    </div>
+    <p class="src reveal"><span data-i18n="rev_all"></span> <a href="https://yandex.com/maps/org/local_hotel/100966544345/reviews/" target="_blank" rel="noopener">5.0 · 79 ↗</a></p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <div class="kicker reveal" style="justify-content:center" data-i18n="cta_k"></div>
+    <h2 class="h2 split" data-i18n="cta_h"></h2>
+    <div class="btns reveal d2">
+      <a href="booking.html" class="btn btn-gold"><span data-i18n="book"></span></a>
+      <a href="tel:+998935419000" class="btn btn-ghost"><span>+998 93 541 90 00</span></a>
+    </div>
+  </div>
+</section>
+
+<script src="app.js"></script>
+<script>
+
+/* фото */
+const img=(id,src)=>$(id).insertAdjacentHTML('afterbegin',`<img src="${src}" alt="" loading="lazy" onerror="this.remove()">`);
+img('#aboutImg',IMG.about); img('#famKids',IMG.kids); img('#famPet',IMG.dogs); img('#famTwo',ROOMS[2].img);
+
+/* небо: звёзды, облака, птицы */
+const st=$('#stars');
+for(let i=0;i<110;i++){const s=document.createElement('i');s.style.cssText=`left:${rnd(0,100)}%;top:${rnd(0,100)}%;animation-delay:${rnd(0,3)}s;transform:scale(${rnd(.5,1.4)})`;st.appendChild(s)}
+[[8,220,55],[18,160,75],[30,260,95]].forEach(([top,w,dur],i)=>$('#clouds').insertAdjacentHTML('beforeend',`<div class="cloud" style="top:${top}%;width:${w}px;animation-duration:${dur}s;animation-delay:-${i*22}s"></div>`));
+[[10,0,26],[30,-4,30],[0,-9,24],[55,-15,34]].forEach(([top,del,dur])=>$('#birds').insertAdjacentHTML('beforeend',`<div class="bird" style="top:${top}px;animation-delay:${del}s;animation-duration:${dur}s"><svg viewBox="0 0 28 14"><path d="M1 8 Q7 1 14 8 Q21 1 27 8"/></svg></div>`));
+
+/* свечение и параллакс */
+const hero=$('#hero'),glow=$('#glow');
+hero.addEventListener('mousemove',e=>{const r=hero.getBoundingClientRect();glow.style.left=(e.clientX-r.left)+'px';glow.style.top=(e.clientY-r.top)+'px'});
+addEventListener('scroll',()=>{const y=scrollY;if(y<innerHeight){$('#heroSky').style.transform=`translateY(${y*.22}px)`;$('#orb').style.transform=`translateY(${y*.5}px)`}},{passive:true});
+
+/* быстрый поиск → страница бронирования */
+const iso=d=>d.toISOString().slice(0,10);
+$('#qIn').min=iso(new Date());$('#qIn').value=iso(new Date(Date.now()+864e5));$('#qOut').value=iso(new Date(Date.now()+3*864e5));
+$('#qIn').onchange=()=>{if($('#qOut').value<=$('#qIn').value){const n=new Date($('#qIn').value);n.setDate(n.getDate()+1);$('#qOut').value=iso(n)}};
+$('#quick').onsubmit=e=>{e.preventDefault();
+  const q=new URLSearchParams({in:$('#qIn').value,out:$('#qOut').value,adults:$('#qG').value,room:$('#qRoom').value});
+  const a=document.createElement('a');a.href='booking.html?'+q;document.body.appendChild(a);a.click()};
+
+/* кот */
+LH.cat($('#marquee'));
+
+/* лапки на карточке питомца */
+for(let i=0;i<7;i++) $('#paws').insertAdjacentHTML('beforeend',`<i style="left:${12+i*11}%;top:${18+(i%2)*9}%;animation-delay:${i*.45}s;transform:rotate(${70+(i%2)*25}deg)">🐾</i>`);
+
+/* панорама день/ночь */
+const pano=$('#view');
+city($('#panoSky'),520,{c1:'var(--b1)',c2:'var(--b2)',c3:'var(--b3)',lit:'#ffd890'});
+function mode(m){
+  pano.classList.toggle('day',m==='day');pano.classList.toggle('night',m==='night');
+  $$('#dn span').forEach(s=>s.classList.toggle('on',s.dataset.m===m));
+  const c=m==='day'?['#8fb3cf','#5d7896','#3d5470']:['#1a2448','#0e1530','#070a12'];
+  ['--b1','--b2','--b3'].forEach((v,i)=>pano.style.setProperty(v,c[i]));
+}
+$$('#dn span').forEach(s=>s.onclick=()=>mode(s.dataset.m));
+mode(document.documentElement.dataset.theme==='dark'?'night':'day');
+document.addEventListener('theme',e=>mode(e.detail==='dark'?'night':'day'));
+
+/* динамика при смене языка */
+function render(){
+  $('#roomsGrid').innerHTML=ROOMS.slice(0,3).map(roomCard).join('');
+  const it=t('mq').map(x=>`<span>${x}</span>`).join('');$('#mq').innerHTML=it+it+it;
+  const sel=$('#qRoom'),cur=sel.value||'loft';
+  sel.innerHTML=ROOMS.map(r=>`<option value="${r.id}">${t('r_'+r.id)}</option>`).join('');sel.value=cur;
+}
+document.addEventListener('lang',render);
+LH.init();
+</script>
+</body>
+</html>

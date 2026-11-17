@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Номера — Local Hotel, Ташкент</title>
+<meta name="description" content="Номера Local Hotel: стандарт, двухуровневый лофт, панорамные апартаменты и семейный люкс. Можно с детьми и с питомцем.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.dataset.theme=(()=>{try{return localStorage.getItem('lh_theme')||'light'}catch(e){return'light'}})()</script>
+</head>
+<body data-page="rooms">
+
+<header class="page-head">
+  <div class="wrap">
+    <div class="crumbs reveal"><a href="index.html" data-i18n="nav_home"></a> / <span data-i18n="nav_rooms"></span></div>
+    <h1 class="h1 split" data-i18n="rp_h"></h1>
+    <p class="lead reveal d2" data-i18n="rp_p"></p>
+  </div>
+  <div class="mini-city city-auto"><svg data-city="140" viewBox="0 0 1600 140" preserveAspectRatio="xMidYMax slice"></svg></div>
+</header>
+
+<section class="sec" style="padding-top:60px">
+  <div class="wrap">
+    <div class="filters reveal" id="filters">
+      <button class="chip on" data-f="all" data-i18n="flt_all"></button>
+      <button class="chip" data-f="kids" data-i18n="flt_kids"></button>
+      <button class="chip" data-f="pets" data-i18n="flt_pets"></button>
+      <button class="chip" data-f="view" data-i18n="flt_view"></button>
+    </div>
+    <div class="rooms" id="roomsGrid"></div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div class="kicker reveal" style="justify-content:center" data-i18n="cta_k"></div>
+    <h2 class="h2 split" data-i18n="cta_h"></h2>
+    <div class="btns reveal d2"><a href="booking.html" class="btn btn-gold"><span data-i18n="book"></span></a></div>
+  </div>
+</section>
+
+<script src="app.js"></script>
+<script>
+let F='all';
+function render(){
+  $('#roomsGrid').innerHTML=ROOMS.map(roomCard).join('');
+  filter();
+}
+function filter(){
+  $$('#roomsGrid .room').forEach((c,i)=>{
+    const r=ROOMS.find(x=>x.id===c.dataset.id), ok=F==='all'||r[F];
+    c.classList.toggle('hidden',!ok);
+    if(ok){c.classList.remove('in');setTimeout(()=>c.classList.add('in'),60+i*90)}
+  });
+}
+$$('#filters .chip').forEach(b=>b.onclick=()=>{F=b.dataset.f;$$('#filters .chip').forEach(x=>x.classList.toggle('on',x===b));filter()});
+document.addEventListener('lang',render);
+LH.init();
+</script>
+</body>
+</html>
