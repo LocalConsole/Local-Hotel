@@ -147,8 +147,6 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:300;op
 .shoot{position:absolute;width:140px;height:2px;background:linear-gradient(90deg,#fff,transparent);border-radius:2px;opacity:0;transform:rotate(-24deg);display:none}
 [data-theme="dark"] .shoot{display:block;animation:shoot 7s ease-in infinite}
 @keyframes shoot{0%{opacity:0;transform:translate(0,0) rotate(-24deg)}2%{opacity:1}10%{opacity:0;transform:translate(-420px,190px) rotate(-24deg)}100%{opacity:0}}
-.orb{position:absolute;right:12%;top:16%;width:96px;height:96px;border-radius:50%;transition:background .8s,box-shadow .8s;background:radial-gradient(circle,#fffaf0,#ffd88a 70%);box-shadow:0 0 120px 50px rgba(255,214,130,.55)}
-[data-theme="dark"] .orb{width:88px;height:88px;background:radial-gradient(circle at 35% 35%,#fff8e6,#e9d7ae 60%,#c9b285);box-shadow:0 0 80px 20px rgba(246,223,174,.25)}
 .cloud{position:absolute;height:46px;border-radius:50px;background:#fff;filter:blur(2px);opacity:.85;transition:opacity .8s;animation:drift linear infinite}
 .cloud::before,.cloud::after{content:"";position:absolute;background:#fff;border-radius:50%}
 .cloud::before{width:60%;height:150%;left:15%;top:-70%}
@@ -278,9 +276,6 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:300;op
 .pano.day{background:linear-gradient(180deg,#5fa3d9 0%,#9ccbe9 45%,#f3d9b1 85%,#f6c98f 100%)}
 .pano-svg{position:absolute;left:0;right:0;bottom:0;height:70%}
 .pano-svg svg{width:100%;height:100%}
-.pano .sun{position:absolute;left:18%;width:120px;height:120px;border-radius:50%;transition:top 1.6s var(--ease),background 1.6s,box-shadow 1.6s}
-.pano.day .sun{top:14%;background:radial-gradient(circle,#fff6d6,#ffd57a);box-shadow:0 0 120px 40px rgba(255,214,122,.55)}
-.pano.night .sun{top:16%;background:radial-gradient(circle at 35% 35%,#fffbee,#e7d6ad 60%,#c3ad80);box-shadow:0 0 90px 20px rgba(246,223,174,.25)}
 .pano.day .win{fill:#eef4fa!important;opacity:.32!important;animation:none}
 .pano.day .beacon{opacity:0!important}
 .pano-copy{position:absolute;z-index:3;top:13%;right:6vw;text-align:right;max-width:560px;color:#f3ece0;transition:color 1.6s}
@@ -447,7 +442,6 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:300;op
   .hero .h1{font-size:15vw}
   .nav{padding:16px 4vw}.logo{font-size:19px;letter-spacing:.2em;gap:8px}.nav-right{gap:7px}.icon-btn{width:36px;height:36px}
   .cloud{opacity:.45;transform:scale(.6)}
-  .orb,[data-theme="dark"] .orb{width:56px;height:56px;top:auto;bottom:64%;right:8%}
   .lang button{padding:6px 8px}
   .pick-rooms,.row2{grid-template-columns:1fr}
   .panel{padding:24px}
@@ -484,11 +478,6 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:300;op
 .l2{background:linear-gradient(180deg,#3b3b78 0%,#b2577a 45%,#f2945f 80%,#ffc477 100%)}
 .l3{background:linear-gradient(180deg,#05070f 0%,#0e1530 55%,#1d2650 100%)}
 .s0 .l0,.s1 .l1,.s2 .l2,.s3 .l3{opacity:1}
-.day-orb{position:absolute;width:86px;height:86px;border-radius:50%;transform:translate(-50%,-50%);transition:left 1.4s var(--ease),top 1.4s var(--ease),background 1.2s,box-shadow 1.2s}
-.s0 .day-orb{left:16%;top:62%;background:radial-gradient(circle,#fff4dc,#ffc56b);box-shadow:0 0 90px 30px rgba(255,190,110,.6)}
-.s1 .day-orb{left:50%;top:16%;background:radial-gradient(circle,#fffbe8,#ffe08a);box-shadow:0 0 110px 40px rgba(255,230,150,.6)}
-.s2 .day-orb{left:82%;top:58%;background:radial-gradient(circle,#ffe2b0,#ff7a3d);box-shadow:0 0 110px 40px rgba(255,120,60,.55)}
-.s3 .day-orb{left:78%;top:18%;width:66px;height:66px;background:radial-gradient(circle at 35% 35%,#fffbee,#e7d6ad 60%,#c3ad80);box-shadow:0 0 70px 16px rgba(246,223,174,.3)}
 .day-stars{position:absolute;inset:0;opacity:0;transition:opacity 1.2s}
 .s3 .day-stars{opacity:1}
 .day-stars i{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;animation:tw 3s ease-in-out infinite}
@@ -554,3 +543,30 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:300;op
   .qz-res{grid-template-columns:1fr}
   .qz-res .ph{aspect-ratio:16/9}
 }
+
+/* ---------- солнце и луна: солнце заходит, луна восходит с другой стороны ---------- */
+.orbs{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.o-sun,.o-moon,.d-sun,.d-moon,.p-sun,.p-moon{position:absolute;border-radius:50%;transform:translate(-50%,-50%)}
+.o-sun,.d-sun,.p-sun{background:radial-gradient(circle,#fffaf0,#ffd88a 70%);box-shadow:0 0 120px 50px rgba(255,214,130,.55);transition:left 2s cubic-bezier(.3,.1,.6,1),top 2s cubic-bezier(.55,0,.85,.4)}
+.o-moon,.d-moon,.p-moon{background:radial-gradient(circle at 35% 35%,#fff8e6,#e9d7ae 60%,#c9b285);box-shadow:0 0 80px 20px rgba(246,223,174,.28);transition:left 2s cubic-bezier(.3,.1,.6,1),top 2s cubic-bezier(.55,0,.85,.4)}
+/* главный экран */
+.o-sun{width:96px;height:96px;left:86%;top:22%}
+.o-moon{width:86px;height:86px;left:62%;top:118%}
+[data-theme="dark"] .o-sun{left:112%;top:96%}
+[data-theme="dark"] .o-moon{left:86%;top:22%;transition:left 2s cubic-bezier(.5,0,.8,.6),top 2s cubic-bezier(.15,.6,.35,1)}
+[data-theme="light"] .o-sun{transition:left 2s cubic-bezier(.5,0,.8,.6),top 2s cubic-bezier(.15,.6,.35,1)}
+/* один день в Local */
+.d-sun{width:86px;height:86px}
+.d-moon{width:64px;height:64px;left:45%;top:112%}
+.s0 .d-sun{left:16%;top:62%;transition:left 2s cubic-bezier(.5,0,.8,.6),top 2s cubic-bezier(.15,.6,.35,1);background:radial-gradient(circle,#fff4dc,#ffc56b);box-shadow:0 0 90px 30px rgba(255,190,110,.6)}
+.s1 .d-sun{left:50%;top:18%;transition:left 2s cubic-bezier(.5,0,.8,.6),top 2s cubic-bezier(.15,.6,.35,1)}
+.s2 .d-sun{left:82%;top:60%;background:radial-gradient(circle,#ffe2b0,#ff7a3d);box-shadow:0 0 110px 40px rgba(255,120,60,.55)}
+.s3 .d-sun{left:115%;top:105%;background:radial-gradient(circle,#ffe2b0,#ff7a3d)}
+.s3 .d-moon{left:74%;top:20%;transition:left 2s cubic-bezier(.5,0,.8,.6),top 2s cubic-bezier(.15,.6,.35,1)}
+/* вид из окна */
+.p-sun{width:120px;height:120px;left:22%;top:20%}
+.p-moon{width:96px;height:96px;left:52%;top:118%}
+.pano.day .p-sun{transition:left 2s cubic-bezier(.5,0,.8,.6),top 2s cubic-bezier(.15,.6,.35,1)}
+.pano.night .p-sun{left:-10%;top:98%}
+.pano.night .p-moon{left:30%;top:18%;transition:left 2s cubic-bezier(.5,0,.8,.6),top 2s cubic-bezier(.15,.6,.35,1)}
+@media (max-width:560px){.o-sun{width:56px;height:56px;left:84%;top:16%}.o-moon{width:50px;height:50px}[data-theme="dark"] .o-moon{left:84%;top:16%}}
