@@ -213,6 +213,33 @@ qz3:'What matters most?',qz3a:'The view',qz3b:'Space',qz3c:'Price',
 qz_res:'Your match',qz_book:'Book this room',qz_again:'Start over',
 more_k:'Any questions?',more_h:'We\'re here <em>24/7</em>',more_btn:'Contacts'});
 
+
+/* ---------- галерея: заготовки под фото отеля (впишите ссылку в img, когда пришлют фото) ---------- */
+const GALLERY=[
+ {key:'g1',img:null,o:'h'},{key:'g2',img:null,o:'h'},{key:'g3',img:null,o:'h'},
+ {key:'g4',img:null,o:'v'},{key:'g5',img:null,o:'h'},{key:'g6',img:null,o:'h'}];
+Object.assign(T.ru,{slot:'Место для фото',o_h:'горизонтальное',o_v:'вертикальное',
+ g1_h:'Фасад и вход',g1_p:'Здание днём, вывеска Local и вход в отель',
+ g2_h:'Лобби и ресепшн',g2_p:'Стойка ресепшн, зона ожидания, детали интерьера',
+ g3_h:'Двухуровневый лофт',g3_p:'Общий план: лестница, гостиная внизу, спальня наверху',
+ g4_h:'Вид из окна',g4_p:'Панорама города днём — с башнями Tashkent City',
+ g5_h:'Семейный люкс',g5_p:'Спальня, детская кроватка, уголок для питомца',
+ g6_h:'Ночной Ташкент',g6_p:'Огни города из окна номера вечером'});
+Object.assign(T.uz,{slot:'Rasm uchun joy',o_h:'gorizontal',o_v:'vertikal',
+ g1_h:'Fasad va kirish',g1_p:'Kunduzgi bino, Local yozuvi va kirish',
+ g2_h:'Lobbi va resepshn',g2_p:'Resepshn, kutish zonasi, interyer detallari',
+ g3_h:'Ikki qavatli loft',g3_p:'Umumiy ko\'rinish: zina, pastda mehmonxona, tepada yotoqxona',
+ g4_h:'Derazadan manzara',g4_p:'Kunduzgi shahar panoramasi — Tashkent City minoralari bilan',
+ g5_h:'Oilaviy lyuks',g5_p:'Yotoqxona, bolalar karavoti, uy hayvoni uchun burchak',
+ g6_h:'Tungi Toshkent',g6_p:'Kechqurun xona derazasidan shahar chiroqlari'});
+Object.assign(T.en,{slot:'Photo goes here',o_h:'landscape',o_v:'portrait',
+ g1_h:'Facade & entrance',g1_p:'The building by day, Local sign and entrance',
+ g2_h:'Lobby & reception',g2_p:'Reception desk, waiting area, interior details',
+ g3_h:'Two-level loft',g3_p:'Wide shot: stairs, lounge below, bedroom above',
+ g4_h:'The view',g4_p:'City panorama by day — with the Tashkent City towers',
+ g5_h:'Family suite',g5_p:'Bedroom, baby cot, a corner for the pet',
+ g6_h:'Tashkent at night',g6_p:'City lights from the room window in the evening'});
+
 /* ---------- утилиты ---------- */
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const fmt=n=>Math.round(n).toLocaleString('ru-RU').replace(/,/g,' ');
@@ -235,6 +262,7 @@ const ICON={
  child:'<circle cx="12" cy="10" r="3"/><path d="M6.5 21a5.5 5.5 0 0 1 11 0"/>',
  cat:'<path d="M5 20.5v-8.8L4 4l4.2 3.2h7.6L20 4l-1 7.7v8.8z"/><path d="M9.5 13v.01M14.5 13v.01"/><path d="M11 16.2h2l-1 1z"/>',
  dog:'<path d="M6.2 8.2 3 5.5V12l3 1.4"/><path d="M17.8 8.2 21 5.5V12l-3 1.4"/><path d="M6 8h12v6.5a6 6 0 0 1-12 0z"/><path d="M10 12.5v.01M14 12.5v.01"/><path d="M11 16h2"/>',
+ camera:'<path d="M3.5 8.5A2 2 0 0 1 5.5 6.5h2.2L9.2 4.5h5.6l1.5 2h2.2a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.6"/>',
  bunny:'<path d="M9.2 9.5V3.5a2.2 2.2 0 0 1 2.2 2.2V9"/><path d="M14.8 9.5V3.5a2.2 2.2 0 0 0-2.2 2.2V9"/><circle cx="12" cy="15" r="5.5"/><path d="M10 14.5v.01M14 14.5v.01"/>'
 };
 const ic=n=>`<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">${ICON[n]}</svg>`;
@@ -473,5 +501,5 @@ function lightbox(){
 }
 
 /* ---------- старт ---------- */
-window.LH={ic,ROOMS,EXTRA,IMG,PHONE,YMAP,T,t,fmt,$,$$,roomCard,observe,toast,confetti,cat,faq,lightbox,rnd,el,city,
+window.LH={ic,GALLERY,ROOMS,EXTRA,IMG,PHONE,YMAP,T,t,fmt,$,$$,roomCard,observe,toast,confetti,cat,faq,lightbox,rnd,el,city,
   init(){applyLang(L)}};

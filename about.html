@@ -7,7 +7,7 @@
 <meta name="description" content="Local Hotel — небольшой отель с панорамным видом на Ташкент. История, галерея, отзывы и ответы на частые вопросы.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1794909004">
+<link rel="stylesheet" href="style.css?v=1794909303">
 <script>document.documentElement.dataset.theme=(()=>{try{return localStorage.getItem('lh_theme')||'light'}catch(e){return'light'}})()</script>
 </head>
 <body data-page="about">
@@ -51,7 +51,7 @@
   <div class="wrap">
     <div class="kicker reveal" data-i18n="gal_k"></div>
     <h2 class="h2 split" data-i18n="gal_h"></h2>
-    <div class="gallery" id="gallery"></div>
+    <div class="gallery slots" id="gallery"></div>
   </div>
 </section>
 
@@ -95,11 +95,18 @@
   </div>
 </section>
 
-<script src="app.js?v=1794909004"></script>
+<script src="app.js?v=1794909303"></script>
 <script>
 $('#storyImg').insertAdjacentHTML('afterbegin',`<img src="${IMG.r1}" alt="" loading="lazy" onerror="this.remove()">`);
-const pics=[ROOMS[1].img,IMG.about,ROOMS[0].img,ROOMS[2].img,ROOMS[3].img,IMG.cat];
-$('#gallery').innerHTML=pics.map((p,i)=>`<div class="ph reveal d${i%4}"><img src="${p}" alt="" loading="lazy" onerror="this.remove()"></div>`).join('');
+function gallery(){
+  $('#gallery').innerHTML=GALLERY.map((g,i)=>g.img
+    ?`<div class="ph reveal in d${i%4}"><img src="${g.img}" alt="${t(g.key+'_h')}" loading="lazy" onerror="this.remove()"></div>`
+    :`<div class="slot reveal in d${i%4}"><span class="slot-n">0${i+1}</span>
+        <div class="slot-c"><span class="slot-ic">${LH.ic('camera')}</span>
+        <h4>${t(g.key+'_h')}</h4><p>${t(g.key+'_p')}</p>
+        <small>${t('slot')} · ${t('o_'+g.o)}</small></div></div>`).join('');
+}
+document.addEventListener('lang',gallery);
 LH.faq(); LH.lightbox(); LH.init();
 </script>
 </body>
