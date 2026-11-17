@@ -392,11 +392,11 @@ function confetti(){
 function cat(container){
   if(!container) return;
   container.insertAdjacentHTML('beforeend',`<div class="cat-walk" id="cat"><span class="meow" data-i18n="meow"></span>
-  <svg viewBox="0 0 64 36"><path class="tail" d="M12 20 C4 18 3 9 8 5" fill="none" stroke-width="3.2" stroke-linecap="round"/>
+  <span class="cat-body"><svg viewBox="0 0 64 36"><path class="tail" d="M12 20 C4 18 3 9 8 5" fill="none" stroke-width="3.2" stroke-linecap="round"/>
   <g class="leg l1"><rect x="14" y="22" width="4" height="12" rx="2"/></g><g class="leg l2"><rect x="35" y="22" width="4" height="12" rx="2"/></g>
   <ellipse cx="27" cy="20" rx="16" ry="7.5"/>
   <g class="leg l3"><rect x="19" y="22" width="4" height="12" rx="2"/></g><g class="leg l4"><rect x="39" y="22" width="4" height="12" rx="2"/></g>
-  <g class="head"><circle cx="45" cy="13" r="7.5"/><path d="M39.5 8 L41 0.5 L45 6.5Z M46 6.5 L50.5 0.5 L51.5 9Z"/><circle cx="48" cy="12" r="1.4" fill="#e9c27c"/></g></svg></div>`);
+  <g class="head"><circle cx="45" cy="13" r="7.5"/><path d="M39.5 8 L41 0.5 L45 6.5Z M46 6.5 L50.5 0.5 L51.5 9Z"/><circle cx="48" cy="12" r="1.4" fill="#e9c27c"/></g></svg></span></div>`);
   $('#cat').onclick=()=>{toast(t('meow'));$('#cat').classList.add('talk');setTimeout(()=>$('#cat').classList.remove('talk'),2500)};
 }
 
