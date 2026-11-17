@@ -44,8 +44,8 @@ r2:'Local — это не просто переночевать. Это комф
 r3:'Чистые номера, апартаменты с эксклюзивным интерьером, двухэтажные — и панорамный вид на город.',
 cta_k:'Прямое бронирование',cta_h:'Ваш вид на Ташкент<br><em>уже ждёт</em>',
 demo:'Демо-версия сайта · фото, цены и условия можно заменить',foot_about:'Небольшой отель с панорамным видом на Ташкент. Рядом Tashkent City.',foot_nav:'Навигация',foot_c:'Контакты',foot_soc:'На связи',
-meow:'Мяу! С питомцами можно 🐾',
-rp_h:'Номера <em>и апартаменты</em>',rp_p:'Четыре типа номеров — от уютного стандарта до семейного люкса с двумя спальнями.',flt_all:'Все',flt_kids:'👶 С детьми',flt_pets:'🐾 С питомцем',flt_view:'🌆 С видом',
+meow:'Мяу! С питомцами можно',
+rp_h:'Номера <em>и апартаменты</em>',rp_p:'Четыре типа номеров — от уютного стандарта до семейного люкса с двумя спальнями.',flt_all:'Все',flt_kids:'С детьми',flt_pets:'С питомцем',flt_view:'С видом',
 ap_h:'Об <em>отеле</em>',ap_p:'Небольшой, тихий и очень внимательный к гостям отель в новом центре Ташкента.',
 story_k:'Наша история',story_h:'Маленький отель <em>с большим видом</em>',story_p1:'Мы сделали Local для тех, кто приезжает в Ташкент за впечатлениями, а не за типовым номером. Каждый интерьер — свой, каждое окно — на город.',story_p2:'У нас нет сотен номеров, поэтому каждого гостя мы знаем по имени.',
 gal_k:'Галерея',gal_h:'Загляните <em>внутрь</em>',faq_k:'Вопросы',faq_h:'Частые <em>вопросы</em>',
@@ -62,7 +62,7 @@ ex_bf:'Завтрак',ex_bf_s:'60 000 сум / гость / ночь',ex_tr:'Т
 name:'Имя',phone:'Телефон или Telegram',comment:'Пожелания',comment_ph:'Например: поздний заезд, этаж повыше…',
 your:'Ваша бронь',nights:'Ночей',n_room:'Проживание',n_bf:'Завтрак',n_pet:'Питомец',n_tr:'Трансфер',n_guests:'Гости',total:'Итого',
 send:'Отправить заявку',hint:'Без комиссии и предоплаты. Администратор ответит в Telegram.',
-err_name:'Укажите имя и телефон',err_dates:'Проверьте даты',ok:'Заявка скопирована — отправьте её в Telegram отеля 🎉',msg:'Заявка на бронирование · Local Hotel',
+err_name:'Укажите имя и телефон',err_dates:'Проверьте даты',ok:'Заявка скопирована — отправьте её в Telegram отеля',msg:'Заявка на бронирование · Local Hotel',
 no_fit:'не подходит',pet_word:{cat:'кошка',dog:'собака',other:'питомец'},
 cp_h:'Как нас <em>найти</em>',cp_p:'Мы в новом центре Ташкента, рядом с Tashkent City. Ресепшн 24/7.',
 c_phone:'Телефон',c_tg:'Telegram',c_addr:'Адрес',addr:'Алмазарский р-н, массив Себзор, 4Б',
@@ -93,8 +93,8 @@ r2:'Local — bu shunchaki tunash emas. Bu qulaylik, sokinlik va oddiy insoniy m
 r3:'Toza xonalar, eksklyuziv interyerli ikki qavatli apartamentlar va shaharga panorama manzara.',
 cta_k:'To\'g\'ridan-to\'g\'ri bron',cta_h:'Toshkentga manzarangiz<br><em>sizni kutmoqda</em>',
 demo:'Saytning demo versiyasi · rasmlar, narxlar va shartlar almashtiriladi',foot_about:'Toshkentga panorama manzarali kichik mehmonxona. Tashkent City yonida.',foot_nav:'Bo\'limlar',foot_c:'Aloqa',foot_soc:'Aloqada',
-meow:'Miyov! Uy hayvonlari bilan mumkin 🐾',
-rp_h:'Xonalar <em>va apartamentlar</em>',rp_p:'To\'rt turdagi xona — shinam standartdan ikki yotoqxonali oilaviy lyuksgacha.',flt_all:'Barchasi',flt_kids:'👶 Bolalar bilan',flt_pets:'🐾 Uy hayvoni bilan',flt_view:'🌆 Manzarali',
+meow:'Miyov! Uy hayvonlari bilan mumkin',
+rp_h:'Xonalar <em>va apartamentlar</em>',rp_p:'To\'rt turdagi xona — shinam standartdan ikki yotoqxonali oilaviy lyuksgacha.',flt_all:'Barchasi',flt_kids:'Bolalar bilan',flt_pets:'Uy hayvoni bilan',flt_view:'Manzarali',
 ap_h:'Mehmonxona <em>haqida</em>',ap_p:'Toshkentning yangi markazida kichik, sokin va mehmonlarga juda e\'tiborli mehmonxona.',
 story_k:'Bizning tarix',story_h:'Kichik mehmonxona <em>katta manzara bilan</em>',story_p1:'Local\'ni Toshkentga taassurot uchun keladiganlar uchun yaratdik. Har bir interyer — o\'ziga xos, har bir deraza — shaharga.',story_p2:'Bizda yuzlab xona yo\'q, shuning uchun har bir mehmonni ismi bilan bilamiz.',
 gal_k:'Galereya',gal_h:'<em>Ichkariga</em> qarang',faq_k:'Savollar',faq_h:'Ko\'p beriladigan <em>savollar</em>',
@@ -111,7 +111,7 @@ ex_bf:'Nonushta',ex_bf_s:'60 000 so\'m / mehmon / kecha',ex_tr:'Aeroportdan tran
 name:'Ism',phone:'Telefon yoki Telegram',comment:'Istaklar',comment_ph:'Masalan: kech kelish, yuqori qavat…',
 your:'Sizning broningiz',nights:'Kechalar',n_room:'Yashash',n_bf:'Nonushta',n_pet:'Uy hayvoni',n_tr:'Transfer',n_guests:'Mehmonlar',total:'Jami',
 send:'Ariza yuborish',hint:'Komissiya va oldindan to\'lovsiz. Administrator Telegram\'da javob beradi.',
-err_name:'Ism va telefonni kiriting',err_dates:'Sanalarni tekshiring',ok:'Ariza nusxalandi — mehmonxona Telegramiga yuboring 🎉',msg:'Bron arizasi · Local Hotel',
+err_name:'Ism va telefonni kiriting',err_dates:'Sanalarni tekshiring',ok:'Ariza nusxalandi — mehmonxona Telegramiga yuboring',msg:'Bron arizasi · Local Hotel',
 no_fit:'mos emas',pet_word:{cat:'mushuk',dog:'it',other:'uy hayvoni'},
 cp_h:'Bizni qanday <em>topish</em> mumkin',cp_p:'Toshkentning yangi markazida, Tashkent City yonidamiz. Resepshn 24/7.',
 c_phone:'Telefon',c_tg:'Telegram',c_addr:'Manzil',addr:'Olmazor tumani, Sebzor massivi, 4B',
@@ -142,8 +142,8 @@ r2:'Local is not just about spending the night. It\'s comfort, calm and a normal
 r3:'Clean rooms, two-storey apartments with exclusive interiors — and a panoramic view of the city.',
 cta_k:'Direct booking',cta_h:'Your view of Tashkent<br><em>is waiting</em>',
 demo:'Demo version · photos, prices and terms are placeholders',foot_about:'A small hotel with a panoramic view of Tashkent. Next to Tashkent City.',foot_nav:'Navigation',foot_c:'Contacts',foot_soc:'Get in touch',
-meow:'Meow! Pets are welcome 🐾',
-rp_h:'Rooms <em>& apartments</em>',rp_p:'Four room types — from a cosy standard to a two-bedroom family suite.',flt_all:'All',flt_kids:'👶 With kids',flt_pets:'🐾 Pet friendly',flt_view:'🌆 With a view',
+meow:'Meow! Pets are welcome',
+rp_h:'Rooms <em>& apartments</em>',rp_p:'Four room types — from a cosy standard to a two-bedroom family suite.',flt_all:'All',flt_kids:'With kids',flt_pets:'Pet friendly',flt_view:'With a view',
 ap_h:'About <em>the hotel</em>',ap_p:'A small, quiet and truly attentive hotel in Tashkent\'s new centre.',
 story_k:'Our story',story_h:'A small hotel <em>with a big view</em>',story_p1:'We built Local for people who come to Tashkent for impressions, not a standard room. Every interior is unique, every window faces the city.',story_p2:'We don\'t have hundreds of rooms — so we know every guest by name.',
 gal_k:'Gallery',gal_h:'Take a look <em>inside</em>',faq_k:'Questions',faq_h:'Frequently asked <em>questions</em>',
@@ -160,7 +160,7 @@ ex_bf:'Breakfast',ex_bf_s:'60,000 UZS / guest / night',ex_tr:'Airport transfer',
 name:'Name',phone:'Phone or Telegram',comment:'Requests',comment_ph:'E.g. late check-in, higher floor…',
 your:'Your booking',nights:'Nights',n_room:'Stay',n_bf:'Breakfast',n_pet:'Pet',n_tr:'Transfer',n_guests:'Guests',total:'Total',
 send:'Send request',hint:'No commission, no prepayment. The admin will reply in Telegram.',
-err_name:'Please enter your name and phone',err_dates:'Please check the dates',ok:'Request copied — send it to the hotel in Telegram 🎉',msg:'Booking request · Local Hotel',
+err_name:'Please enter your name and phone',err_dates:'Please check the dates',ok:'Request copied — send it to the hotel in Telegram',msg:'Booking request · Local Hotel',
 no_fit:'not suitable',pet_word:{cat:'cat',dog:'dog',other:'pet'},
 cp_h:'How to <em>find us</em>',cp_p:'We\'re in Tashkent\'s new centre, next to Tashkent City. Reception 24/7.',
 c_phone:'Phone',c_tg:'Telegram',c_addr:'Address',addr:'Almazar district, Sebzor, 4B',
@@ -175,6 +175,25 @@ const store={get(k,d){try{return localStorage.getItem(k)||d}catch(e){return d}},
 let L=store.get('lh_lang','ru');
 const t=k=>T[L][k];
 const PAGE=document.body.dataset.page;
+
+
+/* ---------- иконки (тонкие линии) ---------- */
+const ICON={
+ kid:'<path d="M4 4h2l1.2 3"/><path d="M7.2 7H20a7 7 0 0 1-7 7H9.5a2.3 2.3 0 0 1-2.3-2.3z"/><path d="M13 7V3.2A4.5 4.5 0 0 1 17.5 7"/><circle cx="9" cy="19" r="2"/><circle cx="17" cy="19" r="2"/>',
+ pet:'<circle cx="6.5" cy="10" r="1.7"/><circle cx="10" cy="6" r="1.7"/><circle cx="14.5" cy="6" r="1.7"/><circle cx="18" cy="10" r="1.7"/><path d="M8.2 17.2c0-2.8 1.9-5 4.1-5s4.1 2.2 4.1 5c0 1.7-1.6 2.6-4.1 2.6s-4.1-.9-4.1-2.6z"/>',
+ view:'<path d="M2.5 21h19"/><path d="M4 21V11l4-2v12"/><path d="M8 21V5l5-2.2V21"/><path d="M13 21V9.5l4-1.2V21"/><path d="M17 21v-7l3.5-1V21"/><path d="M10.5 8v.01M10.5 11v.01M10.5 14v.01"/>',
+ heart:'<path d="M12 20s-7.5-4.6-7.5-10.2A4.2 4.2 0 0 1 12 7.3a4.2 4.2 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/>',
+ phone:'<path d="M5.2 3.5h3.6l1.9 4.8-2.4 1.5a11.5 11.5 0 0 0 5.9 5.9l1.5-2.4 4.8 1.9v3.6a2 2 0 0 1-2.1 2A16.5 16.5 0 0 1 3.2 5.6a2 2 0 0 1 2-2.1z"/>',
+ send:'<path d="M21.5 2.5 10.8 13.2"/><path d="M21.5 2.5 14.8 21.5l-4-8.3-8.3-4z"/>',
+ pin:'<path d="M12 21.5s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9.5" r="2.5"/>',
+ person:'<circle cx="12" cy="7.5" r="3.8"/><path d="M4.5 21a7.5 7.5 0 0 1 15 0"/>',
+ child:'<circle cx="12" cy="10" r="3"/><path d="M6.5 21a5.5 5.5 0 0 1 11 0"/>',
+ cat:'<path d="M5 20.5v-8.8L4 4l4.2 3.2h7.6L20 4l-1 7.7v8.8z"/><path d="M9.5 13v.01M14.5 13v.01"/><path d="M11 16.2h2l-1 1z"/>',
+ dog:'<path d="M6.2 8.2 3 5.5V12l3 1.4"/><path d="M17.8 8.2 21 5.5V12l-3 1.4"/><path d="M6 8h12v6.5a6 6 0 0 1-12 0z"/><path d="M10 12.5v.01M14 12.5v.01"/><path d="M11 16h2"/>',
+ bunny:'<path d="M9.2 9.5V3.5a2.2 2.2 0 0 1 2.2 2.2V9"/><path d="M14.8 9.5V3.5a2.2 2.2 0 0 0-2.2 2.2V9"/><circle cx="12" cy="15" r="5.5"/><path d="M10 14.5v.01M14 14.5v.01"/>'
+};
+const ic=n=>`<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">${ICON[n]}</svg>`;
+function fillIcons(){$$('[data-ic]').forEach(e=>{if(!e.firstElementChild)e.innerHTML=ic(e.dataset.ic)})}
 
 /* ---------- шапка, меню, подвал ---------- */
 const NAV=[['index.html','nav_home'],['rooms.html','nav_rooms'],['about.html','nav_about'],['booking.html','nav_book'],['contacts.html','nav_contacts']];
@@ -219,7 +238,7 @@ function applyLang(l){
   $$('[data-i18n-ph]').forEach(el=>el.placeholder=T[l][el.dataset.i18nPh]);
   $$('.split').forEach(splitWords);
   document.dispatchEvent(new CustomEvent('lang'));
-  observe();
+  fillIcons(); observe();
 }
 $$('#lang button').forEach(b=>b.onclick=()=>applyLang(b.dataset.l));
 
@@ -368,7 +387,7 @@ $$('svg[data-city]').forEach(s=>city(s,+s.dataset.city,{c1:'var(--h1)',c2:'var(-
 function roomCard(r,i){
   return `<article class="room reveal d${i%4}" data-tilt data-id="${r.id}">
     <div class="ph"><img src="${r.img}" alt="" loading="lazy" onerror="this.remove()"><span class="tag">${t('t_'+r.id)}</span>
-      <div class="icons">${r.kids?'<span title="kids">👶</span>':''}${r.pets?'<span title="pets">🐾</span>':''}${r.view?'<span title="view">🌆</span>':''}</div></div>
+      <div class="icons">${r.kids?`<span title="kids">${ic('kid')}</span>`:''}${r.pets?`<span title="pets">${ic('pet')}</span>`:''}${r.view?`<span title="view">${ic('view')}</span>`:''}</div></div>
     <div class="room-body">
       <h3>${t('r_'+r.id)}</h3><p class="desc">${t('d_'+r.id)}</p>
       <div class="feat"><span>${t('cap').replace('{n}',r.max)}</span>${t('ft_'+r.id).map(f=>`<span>${f}</span>`).join('')}</div>
@@ -396,7 +415,7 @@ function cat(container){
   <g class="leg l1"><rect x="14" y="22" width="4" height="12" rx="2"/></g><g class="leg l2"><rect x="35" y="22" width="4" height="12" rx="2"/></g>
   <ellipse cx="27" cy="20" rx="16" ry="7.5"/>
   <g class="leg l3"><rect x="19" y="22" width="4" height="12" rx="2"/></g><g class="leg l4"><rect x="39" y="22" width="4" height="12" rx="2"/></g>
-  <g class="head"><circle cx="45" cy="13" r="7.5"/><path d="M39.5 8 L41 0.5 L45 6.5Z M46 6.5 L50.5 0.5 L51.5 9Z"/><circle cx="48" cy="12" r="1.4" fill="#e9c27c"/></g></svg></span></div>`);
+  <g class="head"><circle cx="45" cy="13" r="7.5"/><path d="M39.5 8 L41 0.5 L45 6.5Z M46 6.5 L50.5 0.5 L51.5 9Z"/><circle class="eye" cx="48" cy="12" r="1.5"/></g></svg></span></div>`);
   $('#cat').onclick=()=>{toast(t('meow'));$('#cat').classList.add('talk');setTimeout(()=>$('#cat').classList.remove('talk'),2500)};
 }
 
@@ -409,5 +428,5 @@ function lightbox(){
 }
 
 /* ---------- старт ---------- */
-window.LH={ROOMS,EXTRA,IMG,PHONE,YMAP,T,t,fmt,$,$$,roomCard,observe,toast,confetti,cat,faq,lightbox,rnd,el,city,
+window.LH={ic,ROOMS,EXTRA,IMG,PHONE,YMAP,T,t,fmt,$,$$,roomCard,observe,toast,confetti,cat,faq,lightbox,rnd,el,city,
   init(){applyLang(L)}};

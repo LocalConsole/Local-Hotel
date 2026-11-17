@@ -271,9 +271,6 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:300;op
 @keyframes wig{0%,100%{transform:rotate(0)}10%{transform:rotate(-14deg)}20%{transform:rotate(12deg)}30%{transform:rotate(0)}}
 .fam h3{font-family:var(--serif);font-size:34px;font-weight:600;line-height:1.05;margin:10px 0 8px}
 .fam p{color:#e6e9f0;font-size:15px}
-.paws{position:absolute;inset:0;pointer-events:none;z-index:0}
-.paws i{position:absolute;font-style:normal;font-size:18px;opacity:0;animation:paw 5s ease-in-out infinite}
-@keyframes paw{0%,100%{opacity:0}20%,60%{opacity:.9}}
 
 /* панорама */
 .pano{height:100vh;min-height:640px;overflow:hidden;position:relative;transition:background 1.6s var(--ease)}
@@ -457,3 +454,22 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:300;op
   .qa .ans p{padding-right:0}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal,.split .w>span{opacity:1;transform:none}.ph.reveal{clip-path:none}}
+
+/* ---------- иконки ---------- */
+.ico{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;display:block}
+.room .icons span{width:36px;height:36px;border-radius:50%;background:rgba(255,250,242,.9);backdrop-filter:blur(8px);color:#11131f;display:grid;place-items:center;font-size:18px;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.fam .emo{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font-size:24px;color:#fff;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);animation:none;transition:transform .6s var(--ease),background .4s}
+.fam:hover .emo{transform:translateY(-4px) rotate(-6deg);background:rgba(255,255,255,.24)}
+.chip{display:inline-flex;align-items:center;gap:8px}
+.chip i{font-size:17px;display:inline-flex}
+.pet-types label span{font-size:34px;display:flex;justify-content:center;margin-bottom:6px;color:var(--acc-2)}
+.guests-anim{gap:6px;font-size:28px;color:var(--acc-2)}
+.guests-anim .kid{font-size:22px;align-self:flex-end}
+.ccard .ic{font-size:30px;color:var(--acc)}
+/* кот: всегда чёрный; ночью — лунный контур и светящиеся глаза */
+.cat-walk svg{fill:#14161f}
+.cat-walk .tail{stroke:#14161f}
+.cat-walk .eye{fill:#e9c27c}
+[data-theme="dark"] .cat-walk svg{fill:#05070c;filter:drop-shadow(0 0 1.2px rgba(246,223,174,.9)) drop-shadow(0 0 7px rgba(246,223,174,.28))}
+[data-theme="dark"] .cat-walk .tail{stroke:#05070c}
+[data-theme="dark"] .cat-walk .eye{fill:#ffe48a;filter:drop-shadow(0 0 2.5px #ffd24d)}

@@ -7,7 +7,7 @@
 <meta name="description" content="Номера Local Hotel: стандарт, двухуровневый лофт, панорамные апартаменты и семейный люкс. Можно с детьми и с питомцем.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1794908057">
+<link rel="stylesheet" href="style.css?v=1794908266">
 <script>document.documentElement.dataset.theme=(()=>{try{return localStorage.getItem('lh_theme')||'light'}catch(e){return'light'}})()</script>
 </head>
 <body data-page="rooms">
@@ -25,9 +25,9 @@
   <div class="wrap">
     <div class="filters reveal" id="filters">
       <button class="chip on" data-f="all" data-i18n="flt_all"></button>
-      <button class="chip" data-f="kids" data-i18n="flt_kids"></button>
-      <button class="chip" data-f="pets" data-i18n="flt_pets"></button>
-      <button class="chip" data-f="view" data-i18n="flt_view"></button>
+      <button class="chip" data-f="kids"><i data-ic="kid"></i><span data-i18n="flt_kids"></span></button>
+      <button class="chip" data-f="pets"><i data-ic="pet"></i><span data-i18n="flt_pets"></span></button>
+      <button class="chip" data-f="view"><i data-ic="view"></i><span data-i18n="flt_view"></span></button>
     </div>
     <div class="rooms" id="roomsGrid"></div>
   </div>
@@ -41,7 +41,7 @@
   </div>
 </section>
 
-<script src="app.js?v=1794908057"></script>
+<script src="app.js?v=1794908266"></script>
 <script>
 let F='all';
 function render(){

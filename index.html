@@ -9,7 +9,7 @@
 <meta property="og:description" content="Панорамные апартаменты в Ташкенте. Можно с детьми и питомцем. Бронирование напрямую.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1794908057">
+<link rel="stylesheet" href="style.css?v=1794908266">
 <script>document.documentElement.dataset.theme=(()=>{try{return localStorage.getItem('lh_theme')||'light'}catch(e){return'light'}})()</script>
 </head>
 <body data-page="home">
@@ -99,11 +99,11 @@
     <p class="lead reveal d1" style="margin-top:24px" data-i18n="fam_p"></p>
     <div class="family">
       <a href="booking.html?kids=1" class="fam reveal" data-tilt><div class="ph" id="famKids"></div>
-        <div><span class="emo">👶</span><h3 data-i18n="fam1_h"></h3><p data-i18n="fam1_p"></p></div></a>
-      <a href="booking.html?pet=1" class="fam reveal d1" data-tilt><div class="ph" id="famPet"></div><div class="paws" id="paws"></div>
-        <div><span class="emo">🐾</span><h3 data-i18n="fam2_h"></h3><p data-i18n="fam2_p"></p></div></a>
+        <div><span class="emo" data-ic="kid"></span><h3 data-i18n="fam1_h"></h3><p data-i18n="fam1_p"></p></div></a>
+      <a href="booking.html?pet=1" class="fam reveal d1" data-tilt><div class="ph" id="famPet"></div>
+        <div><span class="emo" data-ic="pet"></span><h3 data-i18n="fam2_h"></h3><p data-i18n="fam2_p"></p></div></a>
       <a href="booking.html?room=pano" class="fam reveal d2" data-tilt><div class="ph" id="famTwo"></div>
-        <div><span class="emo">🥂</span><h3 data-i18n="fam3_h"></h3><p data-i18n="fam3_p"></p></div></a>
+        <div><span class="emo" data-ic="heart"></span><h3 data-i18n="fam3_h"></h3><p data-i18n="fam3_p"></p></div></a>
     </div>
   </div>
 </section>
@@ -148,7 +148,7 @@
   </div>
 </section>
 
-<script src="app.js?v=1794908057"></script>
+<script src="app.js?v=1794908266"></script>
 <script>
 
 /* фото */
@@ -185,8 +185,6 @@ $('#quick').onsubmit=e=>{e.preventDefault();
 /* кот */
 LH.cat($('#marquee'));
 
-/* лапки на карточке питомца */
-for(let i=0;i<7;i++) $('#paws').insertAdjacentHTML('beforeend',`<i style="left:${12+i*11}%;top:${18+(i%2)*9}%;animation-delay:${i*.45}s;transform:rotate(${70+(i%2)*25}deg)">🐾</i>`);
 
 /* панорама день/ночь */
 const pano=$('#view');
