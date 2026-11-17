@@ -43,13 +43,6 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:300;op
 .curtain.below{transform:translateY(100%);transition:none}
 @keyframes cup{to{transform:none}}
 
-/* ---------- курсор ---------- */
-.cur,.cur-ring{position:fixed;left:0;top:0;pointer-events:none;z-index:350;border-radius:50%;transform:translate(-50%,-50%)}
-.cur{width:7px;height:7px;background:var(--acc)}
-.cur-ring{width:38px;height:38px;border:1px solid var(--acc);transition:width .35s var(--ease),height .35s var(--ease),background .35s,border-color .35s;opacity:.6}
-.cur-ring.big{width:74px;height:74px;background:rgba(232,194,122,.15);border-color:transparent;opacity:1}
-@media (hover:none){.cur,.cur-ring{display:none}}
-
 /* ---------- прогресс скролла ---------- */
 .progress{position:fixed;top:0;left:0;height:2px;width:100%;background:linear-gradient(90deg,var(--gold),var(--acc));transform-origin:0 50%;transform:scaleX(0);z-index:60}
 
@@ -151,13 +144,20 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:300;op
 .cloud::after{width:40%;height:120%;right:12%;top:-45%}
 [data-theme="dark"] .cloud{opacity:0}
 @keyframes drift{from{transform:translateX(-30vw)}to{transform:translateX(130vw)}}
-.birds{position:absolute;top:22%;left:0;width:100%;height:120px;pointer-events:none;transition:opacity .8s}
+.birds{position:absolute;top:9%;left:0;width:100%;height:120px;pointer-events:none;transition:opacity .8s}
 [data-theme="dark"] .birds{opacity:0}
-.bird{position:absolute;animation:fly 26s linear infinite}
-.bird svg{width:28px;height:14px;animation:flap .5s ease-in-out infinite alternate;transform-origin:50% 70%}
-.bird path{fill:none;stroke:#3a4a64;stroke-width:2;stroke-linecap:round}
-@keyframes fly{from{transform:translateX(-10vw)}to{transform:translateX(110vw)}}
-@keyframes flap{to{transform:scaleY(.35)}}
+.bird{position:absolute;left:0;animation:fly 34s linear infinite}
+.bird .bob{animation:bob 3s ease-in-out infinite alternate}
+.bird svg{display:block;overflow:visible}
+.bird path{fill:none;stroke:#2f3d56;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.bird ellipse{fill:#2f3d56}
+.bird .wl,.bird .wr{transform-box:view-box;transform-origin:20px 11px;animation:var(--fd) ease-in-out infinite;animation-delay:var(--fdl)}
+.bird .wl{animation-name:wingL}.bird .wr{animation-name:wingR}
+@keyframes fly{from{transform:translateX(-12vw)}to{transform:translateX(112vw)}}
+@keyframes bob{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(6px)}}
+/* несколько взмахов, затем планирование */
+@keyframes wingL{0%,30%,60%{transform:rotate(-28deg)}15%,45%{transform:rotate(30deg)}75%,100%{transform:rotate(-6deg)}}
+@keyframes wingR{0%,30%,60%{transform:rotate(28deg)}15%,45%{transform:rotate(-30deg)}75%,100%{transform:rotate(6deg)}}
 .hero-sky{position:absolute;left:0;right:0;bottom:0;height:56vh;pointer-events:none}
 .hero-sky svg{position:absolute;bottom:0;left:0;width:100%;height:100%}
 .hero-sky::after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(transparent,var(--bg));z-index:2}
@@ -189,14 +189,23 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:300;op
 .marquee-track span{display:flex;align-items:center;gap:60px;white-space:nowrap}
 .marquee-track span::after{content:"✦";font-style:normal;color:var(--acc);font-size:.6em}
 @keyframes mq{to{transform:translateX(-50%)}}
-.cat-walk{position:absolute;top:-33px;left:0;width:64px;height:34px;z-index:4;animation:catx 24s linear infinite;cursor:pointer}
-.cat-walk svg{width:100%;height:100%;fill:var(--text);animation:catbob .35s ease-in-out infinite alternate}
+.cat-walk{position:absolute;top:-35px;left:0;width:64px;height:36px;z-index:4;animation:catx 24s linear infinite;cursor:pointer}
+.cat-walk svg{width:100%;height:100%;fill:var(--text);overflow:visible;animation:catbob .3s ease-in-out infinite alternate}
+.cat-walk .tail{stroke:var(--text);transform-box:fill-box;transform-origin:100% 100%;animation:tail 1.2s ease-in-out infinite alternate}
+.cat-walk .leg{transform-box:fill-box;transform-origin:50% 0;animation:step .6s ease-in-out infinite alternate}
+.cat-walk .l2,.cat-walk .l3{animation-delay:-.6s}
+.cat-walk .l1,.cat-walk .l2{opacity:.7}
+.cat-walk .head{transform-box:fill-box;transform-origin:30% 80%;animation:nod .6s ease-in-out infinite alternate}
+@keyframes step{from{transform:rotate(26deg)}to{transform:rotate(-26deg)}}
+@keyframes tail{from{transform:rotate(-8deg)}to{transform:rotate(10deg)}}
+@keyframes nod{from{transform:translateY(0)}to{transform:translateY(.8px)}}
+.cat-walk:hover .leg,.cat-walk:hover .tail,.cat-walk:hover .head{animation-play-state:paused}
 .cat-walk .meow{position:absolute;bottom:40px;left:30px;background:var(--text);color:var(--bg);font-size:12px;font-weight:700;padding:5px 11px;border-radius:14px 14px 14px 2px;opacity:0;transform:translateY(6px) scale(.8);transition:.35s var(--ease);white-space:nowrap}
 .cat-walk:hover .meow,.cat-walk.talk .meow{opacity:1;transform:none}
 .cat-walk:hover{animation-play-state:paused}
 .cat-walk:hover svg{animation-play-state:paused}
 @keyframes catx{0%{transform:translateX(-80px)}48%{transform:translateX(calc(100vw + 20px))}50%{transform:translateX(calc(100vw + 20px)) scaleX(-1)}98%{transform:translateX(-80px) scaleX(-1)}100%{transform:translateX(-80px)}}
-@keyframes catbob{to{transform:translateY(-2px)}}
+@keyframes catbob{to{transform:translateY(-1.2px)}}
 
 /* статистика */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);margin-top:90px}

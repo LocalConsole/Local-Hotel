@@ -183,7 +183,6 @@ function shell(){
   document.body.insertAdjacentHTML('afterbegin',`
   <div class="curtain" id="curtain"><div class="cw">${'LOCAL'.split('').map((c,i)=>`<span style="animation-delay:${i*.05}s">${c}</span>`).join('')}</div></div>
   <div class="progress" id="progress"></div>
-  <div class="cur" id="cur"></div><div class="cur-ring" id="curRing"></div>
   <header class="nav" id="nav">
     <a href="index.html" class="logo"><i></i>LOCAL</a>
     <nav class="nav-links">${NAV.map(([h,k])=>`<a href="${h}" class="${h===CUR?'active':''}" data-i18n="${k}"></a>`).join('')}</nav>
@@ -282,11 +281,7 @@ document.addEventListener('click',e=>{
   setTimeout(()=>location.href=h,650);
 });
 
-/* ---------- курсор и магнитные кнопки ---------- */
-const cur=$('#cur'),ring=$('#curRing');let mx=-100,my=-100,rx=-100,ry=-100;
-addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.transform=`translate(${mx}px,${my}px) translate(-50%,-50%)`});
-(function loop(){rx+=(mx-rx)*.16;ry+=(my-ry)*.16;ring.style.transform=`translate(${rx}px,${ry}px) translate(-50%,-50%)`;requestAnimationFrame(loop)})();
-document.addEventListener('mouseover',e=>{ring.classList.toggle('big',!!e.target.closest('a,button,.room,.ph,label,.chip'))});
+/* ---------- магнитные кнопки ---------- */
 function magnetic(){
   if(matchMedia('(hover:none)').matches) return;
   $$('.magnetic,.btn').forEach(b=>{
@@ -398,10 +393,11 @@ function confetti(){
 function cat(container){
   if(!container) return;
   container.insertAdjacentHTML('beforeend',`<div class="cat-walk" id="cat"><span class="meow" data-i18n="meow"></span>
-  <svg viewBox="0 0 64 34"><path d="M12 21 C4 19 3 9 8 5" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" style="stroke:var(--text)"/>
-  <ellipse cx="27" cy="21" rx="16" ry="8"/><circle cx="45" cy="14" r="7.5"/><path d="M39.5 9 L41 1.5 L45 7.5Z M46 7.5 L50.5 1.5 L51.5 10Z"/>
-  <rect x="14" y="25" width="4" height="9" rx="2"/><rect x="21" y="26" width="4" height="8" rx="2"/><rect x="31" y="26" width="4" height="8" rx="2"/><rect x="37" y="25" width="4" height="9" rx="2"/>
-  <circle cx="48" cy="13" r="1.4" fill="#e9c27c"/></svg></div>`);
+  <svg viewBox="0 0 64 36"><path class="tail" d="M12 20 C4 18 3 9 8 5" fill="none" stroke-width="3.2" stroke-linecap="round"/>
+  <g class="leg l1"><rect x="14" y="22" width="4" height="12" rx="2"/></g><g class="leg l2"><rect x="35" y="22" width="4" height="12" rx="2"/></g>
+  <ellipse cx="27" cy="20" rx="16" ry="7.5"/>
+  <g class="leg l3"><rect x="19" y="22" width="4" height="12" rx="2"/></g><g class="leg l4"><rect x="39" y="22" width="4" height="12" rx="2"/></g>
+  <g class="head"><circle cx="45" cy="13" r="7.5"/><path d="M39.5 8 L41 0.5 L45 6.5Z M46 6.5 L50.5 0.5 L51.5 9Z"/><circle cx="48" cy="12" r="1.4" fill="#e9c27c"/></g></svg></div>`);
   $('#cat').onclick=()=>{toast(t('meow'));$('#cat').classList.add('talk');setTimeout(()=>$('#cat').classList.remove('talk'),2500)};
 }
 
