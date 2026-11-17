@@ -7,7 +7,7 @@
 <meta name="description" content="Номера Local Hotel: стандарт, двухуровневый лофт, панорамные апартаменты и семейный люкс. Можно с детьми и с питомцем.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1794908266">
+<link rel="stylesheet" href="style.css?v=1794908771">
 <script>document.documentElement.dataset.theme=(()=>{try{return localStorage.getItem('lh_theme')||'light'}catch(e){return'light'}})()</script>
 </head>
 <body data-page="rooms">
@@ -33,15 +33,47 @@
   </div>
 </section>
 
-<section class="cta">
-  <div class="wrap">
-    <div class="kicker reveal" style="justify-content:center" data-i18n="cta_k"></div>
-    <h2 class="h2 split" data-i18n="cta_h"></h2>
-    <div class="btns reveal d2"><a href="booking.html" class="btn btn-gold"><span data-i18n="book"></span></a></div>
+<!-- ВИД ИЗ ОКНА -->
+<section class="pano day" id="view">
+  <div class="sun"></div>
+  <div class="pano-svg"><svg id="panoSky" viewBox="0 0 1600 520" preserveAspectRatio="xMidYMax slice"></svg></div>
+  <div class="pano-copy">
+    <div class="kicker reveal" data-i18n="view_k"></div>
+    <h2 class="h2 split" data-i18n="view_h"></h2>
+    <div class="toggle reveal d2" id="dn"><span data-m="day" data-i18n="day"></span><span data-m="night" data-i18n="night"></span></div>
   </div>
 </section>
 
-<script src="app.js?v=1794908266"></script>
+<!-- ПОДБОР НОМЕРА -->
+<section class="sec quiz-sec">
+  <div class="wrap quiz-grid">
+    <div>
+      <div class="kicker reveal" data-i18n="qz_k"></div>
+      <h2 class="h2 split" data-i18n="qz_h"></h2>
+      <p class="lead reveal d1" style="margin-top:22px" data-i18n="qz_p"></p>
+      <div class="qz-dots reveal d2" id="qzDots"><i class="on"></i><i></i><i></i></div>
+    </div>
+    <div class="quiz reveal d1" id="quiz">
+      <div class="qz-step on" data-q="0"><h3 data-i18n="qz1"></h3><div class="qz-opts">
+        <button data-v="solo"><i data-ic="heart"></i><span data-i18n="qz1a"></span></button>
+        <button data-v="kids"><i data-ic="kid"></i><span data-i18n="qz1b"></span></button>
+        <button data-v="group"><i data-ic="person"></i><span data-i18n="qz1c"></span></button></div></div>
+      <div class="qz-step" data-q="1"><h3 data-i18n="qz2"></h3><div class="qz-opts">
+        <button data-v="yes"><i data-ic="pet"></i><span data-i18n="qz2a"></span></button>
+        <button data-v="no"><i data-ic="person"></i><span data-i18n="qz2b"></span></button></div></div>
+      <div class="qz-step" data-q="2"><h3 data-i18n="qz3"></h3><div class="qz-opts">
+        <button data-v="view"><i data-ic="view"></i><span data-i18n="qz3a"></span></button>
+        <button data-v="space"><i data-ic="kid"></i><span data-i18n="qz3b"></span></button>
+        <button data-v="price"><i data-ic="pin"></i><span data-i18n="qz3c"></span></button></div></div>
+      <div class="qz-step qz-res" data-q="3"><div class="ph" id="qzImg"></div>
+        <div class="qz-res-t"><div class="kicker" data-i18n="qz_res"></div><h3 id="qzName"></h3><p id="qzPrice"></p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px"><a class="btn btn-gold" id="qzBook" href="booking.html"><span data-i18n="qz_book"></span></a>
+        <button class="btn btn-ghost" id="qzAgain"><span data-i18n="qz_again"></span></button></div></div></div>
+    </div>
+  </div>
+</section>
+
+<script src="app.js?v=1794908771"></script>
 <script>
 let F='all';
 function render(){
@@ -56,7 +88,47 @@ function filter(){
   });
 }
 $$('#filters .chip').forEach(b=>b.onclick=()=>{F=b.dataset.f;$$('#filters .chip').forEach(x=>x.classList.toggle('on',x===b));filter()});
-document.addEventListener('lang',render);
+/* вид из окна */
+const pano=$('#view');
+city($('#panoSky'),520,{c1:'var(--b1)',c2:'var(--b2)',c3:'var(--b3)',lit:'#ffd890'});
+function mode(m){
+  pano.classList.toggle('day',m==='day');pano.classList.toggle('night',m==='night');
+  $$('#dn span').forEach(s=>s.classList.toggle('on',s.dataset.m===m));
+  const c=m==='day'?['#8fb3cf','#5d7896','#3d5470']:['#1a2448','#0e1530','#070a12'];
+  ['--b1','--b2','--b3'].forEach((v,i)=>pano.style.setProperty(v,c[i]));
+}
+$$('#dn span').forEach(s=>s.onclick=()=>mode(s.dataset.m));
+mode(document.documentElement.dataset.theme==='dark'?'night':'day');
+document.addEventListener('theme',e=>mode(e.detail==='dark'?'night':'day'));
+
+/* подбор номера */
+let A=[],resId='loft';
+function pick(a){
+  const [who,pet,want]=a;
+  if(who==='solo'&&pet==='no') return {view:'pano',space:'loft',price:'std'}[want];
+  if(who==='solo') return 'loft';
+  if(who==='kids') return want==='price'&&pet==='no'?'std':(want==='space'||pet==='yes'?'family':'loft');
+  return want==='price'&&pet==='no'?'loft':'family';
+}
+function qstep(i){
+  $$('.qz-step').forEach(s=>s.classList.toggle('on',+s.dataset.q===i));
+  $$('#qzDots i').forEach((d,k)=>d.classList.toggle('on',k<=Math.min(i,2)));
+}
+function showRes(){
+  const r=ROOMS.find(x=>x.id===resId);
+  $('#qzImg').innerHTML=`<img src="${r.img}" alt="" onerror="this.remove()">`;
+  $('#qzName').textContent=t('r_'+r.id);
+  $('#qzPrice').textContent=`${fmt(r.price)} ${t('per')} · ${t('from')}`;
+  $('#qzBook').href='booking.html?room='+r.id+(A[1]==='yes'?'&pet=1':'')+(A[0]==='kids'?'&kids=1':'');
+}
+$$('.qz-opts button').forEach(b=>b.onclick=()=>{
+  const q=+b.closest('.qz-step').dataset.q; A[q]=b.dataset.v;
+  b.classList.add('chosen');setTimeout(()=>b.classList.remove('chosen'),500);
+  if(q<2) setTimeout(()=>qstep(q+1),280);
+  else {resId=pick(A);showRes();setTimeout(()=>qstep(3),280);LH.confetti()}
+});
+$('#qzAgain').onclick=()=>{A=[];qstep(0)};
+document.addEventListener('lang',()=>{render();if(A.length===3)showRes()});
 LH.init();
 </script>
 </body>

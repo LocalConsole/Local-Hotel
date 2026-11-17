@@ -7,7 +7,7 @@
 <meta name="description" content="Local Hotel — небольшой отель с панорамным видом на Ташкент. История, галерея, отзывы и ответы на частые вопросы.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1794908266">
+<link rel="stylesheet" href="style.css?v=1794908771">
 <script>document.documentElement.dataset.theme=(()=>{try{return localStorage.getItem('lh_theme')||'light'}catch(e){return'light'}})()</script>
 </head>
 <body data-page="about">
@@ -86,13 +86,16 @@
 
 <section class="cta">
   <div class="wrap">
-    <div class="kicker reveal" style="justify-content:center" data-i18n="cta_k"></div>
-    <h2 class="h2 split" data-i18n="cta_h"></h2>
-    <div class="btns reveal d2"><a href="booking.html" class="btn btn-gold"><span data-i18n="book"></span></a></div>
+    <div class="kicker reveal" style="justify-content:center" data-i18n="more_k"></div>
+    <h2 class="h2 split" data-i18n="more_h"></h2>
+    <div class="btns reveal d2">
+      <a href="contacts.html" class="btn btn-gold"><span data-i18n="more_btn"></span></a>
+      <a href="https://t.me/+998935419000" target="_blank" rel="noopener" class="btn btn-ghost"><span>Telegram</span></a>
+    </div>
   </div>
 </section>
 
-<script src="app.js?v=1794908266"></script>
+<script src="app.js?v=1794908771"></script>
 <script>
 $('#storyImg').insertAdjacentHTML('afterbegin',`<img src="${IMG.r1}" alt="" loading="lazy" onerror="this.remove()">`);
 const pics=[ROOMS[1].img,IMG.about,ROOMS[0].img,ROOMS[2].img,ROOMS[3].img,IMG.cat];

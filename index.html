@@ -9,7 +9,7 @@
 <meta property="og:description" content="Панорамные апартаменты в Ташкенте. Можно с детьми и питомцем. Бронирование напрямую.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=1794908266">
+<link rel="stylesheet" href="style.css?v=1794908771">
 <script>document.documentElement.dataset.theme=(()=>{try{return localStorage.getItem('lh_theme')||'light'}catch(e){return'light'}})()</script>
 </head>
 <body data-page="home">
@@ -50,44 +50,28 @@
 <!-- БЕГУЩАЯ СТРОКА + КОТ -->
 <div class="marquee" id="marquee"><div class="marquee-track" id="mq"></div></div>
 
-<!-- ОБ ОТЕЛЕ -->
-<section class="sec" id="about">
+<!-- ОДИН ДЕНЬ В LOCAL -->
+<section class="sec day" id="day">
   <div class="wrap">
-    <div class="about-grid">
-      <div>
-        <div class="kicker reveal" data-i18n="about_k"></div>
-        <h2 class="h2 split" data-i18n="about_h"></h2>
-        <p class="lead reveal d1" style="margin-top:28px" data-i18n="about_p"></p>
-        <div class="num-list reveal d2">
-          <div><em>01</em><p data-i18n="a1"></p></div>
-          <div><em>02</em><p data-i18n="a2"></p></div>
-          <div><em>03</em><p data-i18n="a3"></p></div>
-          <div><em>04</em><p data-i18n="a4"></p></div>
+    <div class="kicker reveal" data-i18n="day_k"></div>
+    <h2 class="h2 split" data-i18n="day_h"></h2>
+    <div class="day-grid">
+      <div class="day-sticky">
+        <div class="day-sky s0" id="daySky">
+          <i class="sky-l l0"></i><i class="sky-l l1"></i><i class="sky-l l2"></i><i class="sky-l l3"></i>
+          <div class="day-stars" id="dayStars"></div>
+          <div class="day-orb" id="dayOrb"></div>
+          <div class="day-time" id="dayTime">08:00</div>
+          <div class="day-city"><svg id="daySvg" viewBox="0 0 1600 420" preserveAspectRatio="xMidYMax slice"></svg></div>
         </div>
-        <a href="about.html" class="btn btn-ghost reveal d3" style="margin-top:34px"><span data-i18n="more"></span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
-      <div class="ph arch reveal" id="aboutImg"><div class="badge" data-i18n="badge"></div></div>
+      <div class="day-steps">
+        <div class="step" data-s="0"><span class="time" data-i18n="d1_t"></span><h3 data-i18n="d1_h"></h3><p data-i18n="d1_p"></p></div>
+        <div class="step" data-s="1"><span class="time" data-i18n="d2_t"></span><h3 data-i18n="d2_h"></h3><p data-i18n="d2_p"></p></div>
+        <div class="step" data-s="2"><span class="time" data-i18n="d3_t"></span><h3 data-i18n="d3_h"></h3><p data-i18n="d3_p"></p></div>
+        <div class="step" data-s="3"><span class="time" data-i18n="d4_t"></span><h3 data-i18n="d4_h"></h3><p data-i18n="d4_p"></p></div>
+      </div>
     </div>
-    <div class="stats">
-      <div class="stat reveal"><b data-count="5.0">0</b><span data-i18n="s1"></span></div>
-      <div class="stat reveal d1"><b data-count="79">0</b><span data-i18n="s2"></span></div>
-      <div class="stat reveal d2"><b>24/7</b><span data-i18n="s3"></span></div>
-      <div class="stat reveal d3"><b>0%</b><span data-i18n="s4"></span></div>
-    </div>
-  </div>
-</section>
-
-<!-- НОМЕРА -->
-<section class="sec" style="padding-top:30px">
-  <div class="wrap">
-    <div class="rooms-head">
-      <div><div class="kicker reveal" data-i18n="rooms_k"></div><h2 class="h2 split" data-i18n="rooms_h"></h2></div>
-      <div class="reveal d1"><p class="lead" data-i18n="rooms_p"></p>
-        <a href="rooms.html" class="btn btn-ghost" style="margin-top:22px"><span data-i18n="all_rooms"></span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-    </div>
-    <div class="rooms" id="roomsGrid"></div>
   </div>
 </section>
 
@@ -108,52 +92,29 @@
   </div>
 </section>
 
-<!-- ПАНОРАМА -->
-<section class="pano day" id="view">
-  <div class="sun"></div>
-  <div class="pano-svg"><svg id="panoSky" viewBox="0 0 1600 520" preserveAspectRatio="xMidYMax slice"></svg></div>
-  <div class="pano-copy">
-    <div class="kicker reveal" data-i18n="view_k"></div>
-    <h2 class="h2 split" data-i18n="view_h"></h2>
-    <div class="toggle reveal d2" id="dn"><span data-m="day" data-i18n="day"></span><span data-m="night" data-i18n="night"></span></div>
-  </div>
-</section>
-
-<!-- ОТЗЫВЫ -->
-<section class="sec">
+<!-- КУДА ДАЛЬШЕ -->
+<section class="sec" style="padding-top:30px">
   <div class="wrap">
-    <div class="kicker reveal" data-i18n="rev_k"></div>
-    <h2 class="h2 split" data-i18n="rev_h"></h2>
-    <div class="reviews">
-      <div class="rev big reveal"><div><div class="stars5">★★★★★</div><q data-i18n="r1"></q></div>
-        <div class="who"><div class="av">У</div><div>Улугбек С.<br><span data-i18n="ya"></span></div></div></div>
-      <div class="rev reveal d1"><div class="stars5">★★★★★</div><q data-i18n="r2"></q>
-        <div class="who"><div class="av">У</div><div>Улугбек С.<br><span data-i18n="ya"></span></div></div></div>
-      <div class="rev reveal d2"><div class="stars5">★★★★★</div><q data-i18n="r3"></q>
-        <div class="who"><div class="av">★</div><div><span data-i18n="guest_n"></span><br><span data-i18n="ya"></span></div></div></div>
-    </div>
-    <p class="src reveal"><span data-i18n="rev_all"></span> <a href="https://yandex.com/maps/org/local_hotel/100966544345/reviews/" target="_blank" rel="noopener">5.0 · 79 ↗</a></p>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="cta">
-  <div class="wrap">
-    <div class="kicker reveal" style="justify-content:center" data-i18n="cta_k"></div>
-    <h2 class="h2 split" data-i18n="cta_h"></h2>
-    <div class="btns reveal d2">
-      <a href="booking.html" class="btn btn-gold"><span data-i18n="book"></span></a>
-      <a href="tel:+998935419000" class="btn btn-ghost"><span>+998 93 541 90 00</span></a>
+    <div class="kicker reveal" data-i18n="go_k"></div>
+    <h2 class="h2 split" data-i18n="go_h"></h2>
+    <div class="go-grid">
+      <a href="rooms.html" class="go reveal"><div class="ph" id="go1"></div><span class="go-n">01</span>
+        <div class="go-t"><h3 data-i18n="go1"></h3><p data-i18n="go1s"></p></div><span class="go-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+      <a href="about.html" class="go reveal d1"><div class="ph" id="go2"></div><span class="go-n">02</span>
+        <div class="go-t"><h3 data-i18n="go2"></h3><p data-i18n="go2s"></p></div><span class="go-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
+      <a href="booking.html" class="go gold reveal d2"><span class="go-n">03</span>
+        <div class="go-cal" id="goCal"></div>
+        <div class="go-t"><h3 data-i18n="go3"></h3><p data-i18n="go3s"></p></div><span class="go-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M8 7h9v9"/></svg></span></a>
     </div>
   </div>
 </section>
 
-<script src="app.js?v=1794908266"></script>
+<script src="app.js?v=1794908771"></script>
 <script>
 
 /* фото */
 const img=(id,src)=>$(id).insertAdjacentHTML('afterbegin',`<img src="${src}" alt="" loading="lazy" onerror="this.remove()">`);
-img('#aboutImg',IMG.about); img('#famKids',IMG.kids); img('#famPet',IMG.dogs); img('#famTwo',ROOMS[2].img);
+img('#famKids',IMG.kids); img('#famPet',IMG.dogs); img('#famTwo',ROOMS[2].img);
 
 /* небо: звёзды, облака, птицы */
 const st=$('#stars');
@@ -186,22 +147,27 @@ $('#quick').onsubmit=e=>{e.preventDefault();
 LH.cat($('#marquee'));
 
 
-/* панорама день/ночь */
-const pano=$('#view');
-city($('#panoSky'),520,{c1:'var(--b1)',c2:'var(--b2)',c3:'var(--b3)',lit:'#ffd890'});
-function mode(m){
-  pano.classList.toggle('day',m==='day');pano.classList.toggle('night',m==='night');
-  $$('#dn span').forEach(s=>s.classList.toggle('on',s.dataset.m===m));
-  const c=m==='day'?['#8fb3cf','#5d7896','#3d5470']:['#1a2448','#0e1530','#070a12'];
-  ['--b1','--b2','--b3'].forEach((v,i)=>pano.style.setProperty(v,c[i]));
+/* один день: небо меняется при прокрутке */
+const sky=$('#daySky');
+city($('#daySvg'),420,{c1:'var(--b1)',c2:'var(--b2)',c3:'var(--b3)',lit:'#ffd890'});
+for(let i=0;i<60;i++){const s=document.createElement('i');s.style.cssText=`left:${rnd(0,100)}%;top:${rnd(0,55)}%;animation-delay:${rnd(0,3)}s`;$('#dayStars').appendChild(s)}
+const PAL=[['#e9c6b5','#c69c93','#9b7d86'],['#a9c2da','#7d97b5','#5b7392'],['#7a5277','#4c3560','#2a2140'],['#1a2448','#0e1530','#070a12']];
+function setDay(i){
+  sky.className='day-sky s'+i;
+  PAL[i].forEach((c,k)=>sky.style.setProperty('--b'+(k+1),c));
+  $('#dayTime').textContent=['08:00','13:00','19:00','23:00'][i];
+  $$('.step').forEach(st=>st.classList.toggle('on',+st.dataset.s===i));
 }
-$$('#dn span').forEach(s=>s.onclick=()=>mode(s.dataset.m));
-mode(document.documentElement.dataset.theme==='dark'?'night':'day');
-document.addEventListener('theme',e=>mode(e.detail==='dark'?'night':'day'));
+setDay(0);
+const dio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)setDay(+e.target.dataset.s)}),{rootMargin:'-45% 0px -45% 0px'});
+$$('.step').forEach(st=>dio.observe(st));
+
+/* карточки «куда дальше» */
+img('#go1',ROOMS[1].img); img('#go2',IMG.about);
+const d0=new Date();$('#goCal').innerHTML=[...Array(14)].map((_,i)=>{const d=new Date(d0.getTime()+i*864e5);return `<span class="${i>=1&&i<=3?'sel':''}">${d.getDate()}</span>`}).join('');
 
 /* динамика при смене языка */
 function render(){
-  $('#roomsGrid').innerHTML=ROOMS.slice(0,3).map(roomCard).join('');
   const it=t('mq').map(x=>`<span>${x}</span>`).join('');$('#mq').innerHTML=it+it+it;
   const sel=$('#qRoom'),cur=sel.value||'loft';
   sel.innerHTML=ROOMS.map(r=>`<option value="${r.id}">${t('r_'+r.id)}</option>`).join('');sel.value=cur;

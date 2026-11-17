@@ -168,6 +168,51 @@ how_k:'Getting here',how1_h:'From the airport',how1_p:'Taxi or our transfer — 
 route:'Get directions',write:'Message on Telegram'}
 };
 
+
+/* ---------- тексты новых блоков ---------- */
+Object.assign(T.ru,{
+day_k:'Один день в Local',day_h:'От рассвета <em>до огней города</em>',
+d1_t:'08:00',d1_h:'Утро с видом',d1_p:'Кофе у панорамного окна, пока Ташкент просыпается и солнце поднимается над крышами.',
+d2_t:'13:00',d2_h:'Город рядом',d2_p:'Tashkent City, парки и рестораны — в шаговой доступности. Вернуться отдохнуть можно в любой момент.',
+d3_t:'19:00',d3_h:'Закат над башнями',d3_p:'Из лофта видно, как солнце садится за небоскрёбы и небо становится розовым.',
+d4_t:'23:00',d4_h:'Огни ночного Ташкента',d4_p:'Тишина в номере, мягкий свет и тысячи огней за окном. Ради этого сюда и возвращаются.',
+go_k:'Куда дальше',go_h:'Выберите <em>свой путь</em>',
+go1:'Номера',go1s:'Четыре типа: от уютного стандарта до семейного люкса',go2:'Об отеле',go2s:'История, галерея, отзывы и ответы на вопросы',go3:'Бронирование',go3s:'Без комиссии и предоплаты — займёт минуту',
+qz_k:'Подбор номера',qz_h:'Не можете <em>выбрать?</em>',qz_p:'Ответьте на три вопроса — подскажем идеальный номер.',
+qz1:'С кем едете?',qz1a:'Один или вдвоём',qz1b:'С детьми',qz1c:'Компанией',
+qz2:'Берёте питомца?',qz2a:'Да, конечно',qz2b:'Нет',
+qz3:'Что важнее всего?',qz3a:'Вид из окна',qz3b:'Простор',qz3c:'Цена',
+qz_res:'Вам подойдёт',qz_book:'Забронировать',qz_again:'Пройти заново',
+more_k:'Остались вопросы?',more_h:'Мы на связи <em>24/7</em>',more_btn:'Контакты'});
+Object.assign(T.uz,{
+day_k:'Local\'da bir kun',day_h:'Tongdan <em>shahar chiroqlarigacha</em>',
+d1_t:'08:00',d1_h:'Manzarali tong',d1_p:'Toshkent uyg\'onayotganda panorama deraza yonida qahva.',
+d2_t:'13:00',d2_h:'Shahar yonginada',d2_p:'Tashkent City, bog\'lar va restoranlar — piyoda masofada. Istalgan payt dam olishga qaytish mumkin.',
+d3_t:'19:00',d3_h:'Minoralar ortida quyosh botishi',d3_p:'Loftdan quyosh osmono\'parlar ortiga botib, osmon pushti rangga kirishini ko\'rasiz.',
+d4_t:'23:00',d4_h:'Tungi Toshkent chiroqlari',d4_p:'Xonada sokinlik, yumshoq yorug\'lik va derazadan minglab chiroqlar.',
+go_k:'Keyingi qadam',go_h:'O\'z <em>yo\'lingizni</em> tanlang',
+go1:'Xonalar',go1s:'To\'rt tur: shinam standartdan oilaviy lyuksgacha',go2:'Mehmonxona',go2s:'Tarix, galereya, fikrlar va savollarga javoblar',go3:'Bron qilish',go3s:'Komissiyasiz va oldindan to\'lovsiz — bir daqiqa',
+qz_k:'Xona tanlash',qz_h:'Tanlay <em>olmayapsizmi?</em>',qz_p:'Uchta savolga javob bering — ideal xonani taklif qilamiz.',
+qz1:'Kim bilan kelasiz?',qz1a:'Yolg\'iz yoki ikki kishi',qz1b:'Bolalar bilan',qz1c:'Kompaniya bilan',
+qz2:'Uy hayvoni bilanmi?',qz2a:'Ha, albatta',qz2b:'Yo\'q',
+qz3:'Eng muhimi nima?',qz3a:'Derazadan manzara',qz3b:'Kenglik',qz3c:'Narx',
+qz_res:'Sizga mos',qz_book:'Bron qilish',qz_again:'Qaytadan',
+more_k:'Savollar qoldimi?',more_h:'Biz <em>24/7</em> aloqadamiz',more_btn:'Aloqa'});
+Object.assign(T.en,{
+day_k:'A day at Local',day_h:'From sunrise <em>to city lights</em>',
+d1_t:'08:00',d1_h:'Morning with a view',d1_p:'Coffee by the panoramic window as Tashkent wakes up and the sun rises over the rooftops.',
+d2_t:'13:00',d2_h:'The city is close',d2_p:'Tashkent City, parks and restaurants within walking distance. Come back to rest any time.',
+d3_t:'19:00',d3_h:'Sunset behind the towers',d3_p:'From the loft you watch the sun set behind the skyscrapers as the sky turns pink.',
+d4_t:'23:00',d4_h:'Tashkent lights at night',d4_p:'A quiet room, soft light and thousands of city lights outside. This is why guests come back.',
+go_k:'Where next',go_h:'Choose <em>your path</em>',
+go1:'Rooms',go1s:'Four types: from a cosy standard to a family suite',go2:'About',go2s:'Story, gallery, reviews and answers',go3:'Booking',go3s:'No commission, no prepayment — takes a minute',
+qz_k:'Room finder',qz_h:'Can\'t <em>decide?</em>',qz_p:'Answer three questions and we\'ll suggest the perfect room.',
+qz1:'Who\'s coming?',qz1a:'Solo or a couple',qz1b:'With kids',qz1c:'A group',
+qz2:'Bringing a pet?',qz2a:'Yes, of course',qz2b:'No',
+qz3:'What matters most?',qz3a:'The view',qz3b:'Space',qz3c:'Price',
+qz_res:'Your match',qz_book:'Book this room',qz_again:'Start over',
+more_k:'Any questions?',more_h:'We\'re here <em>24/7</em>',more_btn:'Contacts'});
+
 /* ---------- утилиты ---------- */
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const fmt=n=>Math.round(n).toLocaleString('ru-RU').replace(/,/g,' ');
@@ -204,7 +249,7 @@ function shell(){
   <div class="progress" id="progress"></div>
   <header class="nav" id="nav">
     <a href="index.html" class="logo"><i></i>LOCAL</a>
-    <nav class="nav-links">${NAV.map(([h,k])=>`<a href="${h}" class="${h===CUR?'active':''}" data-i18n="${k}"></a>`).join('')}</nav>
+    <nav class="nav-links">${NAV.filter(n=>n[0]!=='booking.html').map(([h,k])=>`<a href="${h}" class="${h===CUR?'active':''}" data-i18n="${k}"></a>`).join('')}</nav>
     <div class="nav-right">
       <button class="icon-btn" id="themeBtn" aria-label="theme">
         <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
